@@ -1,0 +1,210 @@
+/* CAMBIOS GENERALES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Efecto de scroll al hacer click en un enlace interno */
+html {
+  scroll-behavior: smooth;
+}
+
+/* SECCIÓN DE INICIO:
+    - Añadimos una imágen de background */
+section {
+  width: 100%;
+  height: 100vh;
+  background-image: url(media/444.png);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Navegador:
+    - Añadimos una sombra inferior y un background */
+section nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0 16px #821818;
+  background: #821818;
+  position: fixed;
+  left: 0;
+  z-index: 100;
+}
+
+/* Logo (navegador) */
+section nav .logo img {
+  width: 100px;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+/* Lista (navegador) */
+section nav ul {
+  list-style: none;
+}
+
+/* Elementos de lista (navegador) */
+section nav li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* Enlaces de la lista (navegador) */
+section nav li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Hover en enlaces de la lista:
+    - Añadimos una sombra y cambiamos el tamaño al hacer hover sobre alguno de los enlaces */
+section nav li a:hover {
+  text-shadow: 1px 1px 5px #821818;
+  font-size: 18px;
+}
+
+/* Iconos de Font Awesome */
+section nav .iconos_fa i {
+  color: #fff;
+  margin: 0 5px;
+  font-size: 19px;
+}
+
+/* Hover en iconos de Font Awesome */
+section nav .iconos_fa i:hover {
+  text-shadow: 1px 1px 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Sección principal */
+section .main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 10%;
+}
+
+/* h1 en sección principal */
+section .main h1 {
+  position: relative;
+  font-size: 55px;
+  top: 80px;
+  left: 25px;
+}
+
+/* span en h1 en sección principal */
+section .main h1 span {
+  color: #821818;
+}
+
+/* p en sección principal */
+section .main p {
+  width: 650px;
+  text-align: justify;
+  line-height: 22px;
+  position: relative;
+  top: 125px;
+  left: 25px;
+}
+
+/* Botón en sección principal */
+section .main .main_tag .main_btn {
+  background: #821818;
+  padding: 10px 20px;
+  position: relative;
+  top: 200px;
+  left: 25px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Imágen en la sección principal */
+section .main .main_img img {
+  width: 780px;
+  position: relative;
+  top: 90px;
+  left: 20px;
+}
+
+/* servicios */
+.servicios {
+  width: 100%;
+  height: auto;
+  margin: 35px 0;
+}
+
+/* Contenedor de servicios */
+.servicios .servicios_caja {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Contenedor de servicio único */
+.servicios .servicios_caja .servicios_tarjeta {
+  text-align: center;
+  width: 310px;
+  height: auto;
+  box-shadow: 0 0 8px #821818;
+  padding: 15px 10px;
+}
+
+/* Contenedor de servicio - parte superior */
+.servicios .servicios_caja .servicios_tarjeta i {
+  color: #821818;
+  font-size: 45px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* h3 de contenedor de servicio */
+.servicios .servicios_caja .servicios_tarjeta h3 {
+  margin-bottom: 10px;
+}
+
+/* ABOUT */
+.about {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Imagen de about */
+.about .about_image img {
+  width: 800px;
+}
+
+/* h1 de about */
+.about .about_tag h1 {
+  font-size: 50px;
+  position: relative;
+  bottom: 35px;
+}
+
+/* p de about */
+.about .about_tag p {
+  line-height: 22px;
+  width: 650px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* Botón de about */
+.about .about_tag .about_btn {
+  padding: 10px 20px;
+  background: #821818;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  top: 50px;
+}
