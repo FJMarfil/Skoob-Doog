@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "font.css",
+	"sources": [
+		"../scss/fonts/font.scss"
+	],
+	"sourcesContent": [
+		"@import url(\"https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap\");\r\n"
+	],
+	"names": [],
+	"mappings": "AAAA,OAAO,CAAC,kFAAI"
+}
