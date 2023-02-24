@@ -11,71 +11,71 @@
   scroll-behavior: smooth;
 }
 
-/* Enlaces */
+/* Body */
 /* line 14, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-a {
-  cursor: pointer;
+body {
+  width: 100%;
+  /* Párrafos */
+  /* H1 */
+  /* H2 */
+  /* H3 */
+  /* H4 */
+  /* Enlaces */
+  /* ? */
+  /* ? */
+  /* Logo */
 }
 
-/* H1 */
-/* line 19, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-h1 {
-  font-size: 50px;
-  line-height: 64px;
-  color: #222;
-}
-
-/* H2 */
-/* line 26, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-h2 {
-  font-size: 46px;
-  line-height: 54px;
-  color: #222;
-}
-
-/* H4 */
-/* line 33, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-h4 {
-  font-size: 20px;
-  color: #222;
-}
-
-/* H6 */
-/* line 39, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-h6 {
-  font-weight: 700;
-  font-size: 12px;
-}
-
-/* Párrafos */
-/* line 45, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-p {
+/* line 18, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body p {
   font-size: 16px;
   color: #465b52;
   margin: 15px 0 20 0;
 }
 
-/* ? */
-/* line 52, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-.section-p1 {
+/* line 25, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+/* line 32, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+/* line 39, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body h3 {
+  font-size: 20px;
+  color: #222;
+}
+
+/* line 45, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body h4 {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* line 51, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body a {
+  cursor: pointer;
+}
+
+/* line 56, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body .section-p1 {
   padding: 40px 80px;
 }
 
-/* ? */
-/* line 57, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-.section-m1 {
+/* line 61, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body .section-m1 {
   margin: 40px 0;
 }
 
-/* Body */
-/* line 62, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body {
-  width: 100%;
-}
-
-/* Logo */
-/* line 67, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-.logo {
+/* line 66, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body .logo {
   height: 10vh;
 }
 
