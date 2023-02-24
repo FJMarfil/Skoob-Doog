@@ -10,50 +10,60 @@
     scroll-behavior: smooth;
 }
 
+/* Enlaces */
 a {
     cursor: pointer;
 }
 
+/* H1 */
 h1 {
     font-size: 50px;
     line-height: 64px;
     color: #222;
 }
 
+/* H2 */
 h2 {
     font-size: 46px;
     line-height: 54px;
     color: #222;
 }
 
+/* H4 */
 h4 {
     font-size: 20px;
     color: #222;
 }
 
+/* H6 */
 h6 {
     font-weight: 700;
     font-size: 12px;
 }
 
+/* Párrafos */
 p {
     font-size: 16px;
     color: #465b52;
     margin: 15px 0 20 0;
 }
 
+/* ? */
 .section-p1 {
     padding: 40px 80px;
 }
 
+/* ? */
 .section-m1 {
     margin: 40px 0;
 }
 
+/* Body */
 body {
     width: 100%;
 }
 
+/* Logo */
 .logo {
-    height: 100px;
+    height: 10vh;
 }

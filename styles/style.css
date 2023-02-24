@@ -11,62 +11,72 @@
   scroll-behavior: smooth;
 }
 
-/* line 13, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* Enlaces */
+/* line 14, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 a {
   cursor: pointer;
 }
 
-/* line 17, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* H1 */
+/* line 19, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 h1 {
   font-size: 50px;
   line-height: 64px;
   color: #222;
 }
 
-/* line 23, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* H2 */
+/* line 26, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 h2 {
   font-size: 46px;
   line-height: 54px;
   color: #222;
 }
 
-/* line 29, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* H4 */
+/* line 33, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 h4 {
   font-size: 20px;
   color: #222;
 }
 
-/* line 34, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* H6 */
+/* line 39, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 h6 {
   font-weight: 700;
   font-size: 12px;
 }
 
-/* line 39, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* Párrafos */
+/* line 45, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 p {
   font-size: 16px;
   color: #465b52;
   margin: 15px 0 20 0;
 }
 
-/* line 45, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* ? */
+/* line 52, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 .section-p1 {
   padding: 40px 80px;
 }
 
-/* line 49, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* ? */
+/* line 57, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 .section-m1 {
   margin: 40px 0;
 }
 
-/* line 53, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* Body */
+/* line 62, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 body {
   width: 100%;
 }
 
-/* line 57, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+/* Logo */
+/* line 67, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 .logo {
-  height: 100px;
+  height: 10vh;
 }
 
 /*# sourceMappingURL=style.css.map */
