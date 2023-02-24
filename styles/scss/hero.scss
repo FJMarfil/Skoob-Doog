@@ -5,6 +5,8 @@
     justify-content: space-around;
     position: relative;
     top: 10%;
+    width: 100%;
+    height: 100vh;
 
     /* h1 en sección principal */
     h1 {
@@ -53,42 +55,42 @@
     }
 }
 
-/* servicios */
-.servicios {
+/* Servicios */
+.services {
     width: 100%;
     height: auto;
     margin: 35px 0;
-}
 
-/* Contenedor de servicios */
-.servicios .servicios_caja {
-    width: 95%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
+    /* Contenedor de servicios */
+    .services_box {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
 
-/* Contenedor de servicio único */
-.servicios .servicios_caja .servicios_tarjeta {
-    text-align: center;
-    width: 310px;
-    height: auto;
-    box-shadow: 0 0 8px #821818;
-    padding: 15px 10px;
-}
+        /* Contenedor de servicio único */
+        .services_card {
+            text-align: center;
+            width: 310px;
+            height: auto;
+            box-shadow: 0 0 8px #821818;
+            padding: 15px 10px;
 
-/* Contenedor de servicio - parte superior */
-.servicios .servicios_caja .servicios_tarjeta i {
-    color: #821818;
-    font-size: 45px;
-    margin-bottom: 15px;
-    cursor: pointer;
-}
+            /* Contenedor de servicio - parte superior */
+            i {
+                color: #821818;
+                font-size: 45px;
+                margin-bottom: 15px;
+                cursor: pointer;
+            }
 
-/* h3 de contenedor de servicio */
-.servicios .servicios_caja .servicios_tarjeta h3 {
-    margin-bottom: 10px;
+            /* h3 de contenedor de servicio */
+            h3 {
+                margin-bottom: 10px;
+            }
+        }
+    }
 }
 
 /* ABOUT */
@@ -99,34 +101,36 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
 
-/* Imagen de about */
-.about .about_image img {
-    width: 800px;
-}
+    /* Imagen de about */
+    .about_image img {
+        width: 800px;
+    }
 
-/* h1 de about */
-.about .about_tag h1 {
-    font-size: 50px;
-    position: relative;
-    bottom: 35px;
-}
+    .about_tag {
+        /* h1 de about */
+        h1 {
+            font-size: 50px;
+            position: relative;
+            bottom: 35px;
+        }
 
-/* p de about */
-.about .about_tag p {
-    line-height: 22px;
-    width: 650px;
-    text-align: justify;
-    margin-bottom: 15px;
-}
+        /* p de about */
+        p {
+            line-height: 22px;
+            width: 650px;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
 
-/* Botón de about */
-.about .about_tag .about_btn {
-    padding: 10px 20px;
-    background: #821818;
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-    top: 50px;
+        /* Botón de about */
+        .about_btn {
+            padding: 10px 20px;
+            background: #821818;
+            color: #fff;
+            text-decoration: none;
+            position: relative;
+            top: 50px;
+        }
+    }
 }

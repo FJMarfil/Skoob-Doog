@@ -7,13 +7,15 @@
   justify-content: space-around;
   position: relative;
   top: 10%;
+  width: 100%;
+  height: 100vh;
   /* h1 en sección principal */
   /* p en sección principal */
   /* Botón en sección principal */
   /* Imágen en la sección principal */
 }
 
-/* line 10, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 12, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 #hero .main h1 {
   position: relative;
   top: 80px;
@@ -21,12 +23,12 @@
   /* span en h1 en sección principal */
 }
 
-/* line 16, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 18, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 #hero .main h1 span {
   color: #821818;
 }
 
-/* line 22, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 24, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 #hero .main p {
   width: 650px;
   text-align: justify;
@@ -36,7 +38,7 @@
   left: 25px;
 }
 
-/* line 32, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 34, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 #hero .main .main_tag .main_btn {
   background: #821818;
   padding: 10px 20px;
@@ -48,12 +50,12 @@
   transition: 0.3s;
 }
 
-/* line 42, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 44, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 #hero .main .main_tag .main_btn:hover {
   text-shadow: 0px 1px 4px;
 }
 
-/* line 48, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 50, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 #hero .main .main_img img {
   width: 780px;
   position: relative;
@@ -61,51 +63,51 @@
   left: 20px;
 }
 
-/* servicios */
-/* line 57, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
-.servicios {
+/* Servicios */
+/* line 59, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+.services {
   width: 100%;
   height: auto;
   margin: 35px 0;
+  /* Contenedor de servicios */
 }
 
-/* Contenedor de servicios */
-/* line 64, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
-.servicios .servicios_caja {
+/* line 65, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+.services .services_box {
   width: 95%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  /* Contenedor de servicio único */
 }
 
-/* Contenedor de servicio único */
 /* line 73, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
-.servicios .servicios_caja .servicios_tarjeta {
+.services .services_box .services_card {
   text-align: center;
   width: 310px;
   height: auto;
   box-shadow: 0 0 8px #821818;
   padding: 15px 10px;
+  /* Contenedor de servicio - parte superior */
+  /* h3 de contenedor de servicio */
 }
 
-/* Contenedor de servicio - parte superior */
-/* line 82, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
-.servicios .servicios_caja .servicios_tarjeta i {
+/* line 81, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+.services .services_box .services_card i {
   color: #821818;
   font-size: 45px;
   margin-bottom: 15px;
   cursor: pointer;
 }
 
-/* h3 de contenedor de servicio */
-/* line 90, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
-.servicios .servicios_caja .servicios_tarjeta h3 {
+/* line 89, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+.services .services_box .services_card h3 {
   margin-bottom: 10px;
 }
 
 /* ABOUT */
-/* line 95, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 97, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 .about {
   width: 100%;
   height: auto;
@@ -113,24 +115,29 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  /* Imagen de about */
 }
 
-/* Imagen de about */
-/* line 105, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 106, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 .about .about_image img {
   width: 800px;
 }
 
-/* h1 de about */
 /* line 110, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+.about .about_tag {
+  /* h1 de about */
+  /* p de about */
+  /* Botón de about */
+}
+
+/* line 112, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 .about .about_tag h1 {
   font-size: 50px;
   position: relative;
   bottom: 35px;
 }
 
-/* p de about */
-/* line 117, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 119, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 .about .about_tag p {
   line-height: 22px;
   width: 650px;
@@ -138,8 +145,7 @@
   margin-bottom: 15px;
 }
 
-/* Botón de about */
-/* line 125, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
+/* line 127, C:/xampp/htdocs/Proyectos/Web/styles/scss/hero.scss */
 .about .about_tag .about_btn {
   padding: 10px 20px;
   background: #821818;
