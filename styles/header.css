@@ -1,13 +1,11 @@
 /* Header */
 /* line 2, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
 #header {
-  width: 100%;
-  height: 100vh;
   /* Navegador */
 }
 
-/* line 7, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header nav {
+/* line 4, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #nav-header {
   width: 100%;
   display: flex;
   align-items: center;
@@ -21,43 +19,44 @@
   /* Lista de enlaces */
 }
 
-/* line 19, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header nav .logo {
+/* line 16, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #nav-header .logo {
   margin: 8px 0;
 }
 
-/* line 24, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header nav li {
+/* line 21, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #nav-header li {
   list-style: none;
   display: inline-block;
   padding: 0 10px;
   /* Enlaces */
+  /* Icono de carrito */
 }
 
-/* line 30, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header nav li a {
+/* line 27, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #nav-header li a {
   text-decoration: none;
   font-size: 16px;
   font-weight: 700;
   color: #fff;
-  /* Icono de Font Awesome */
+  transition: 0.3s;
 }
 
-/* line 36, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header nav li a:hover {
+/* line 34, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #nav-header li a:hover, #header #nav-header li a.active {
   font-size: 18px;
   text-shadow: 0px 1px 4px;
 }
 
-/* line 42, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header nav li a i {
+/* line 41, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #nav-header li #cart-ico {
   margin-left: 5px;
-  font-size: 22px;
+  font-size: 24px;
 }
 
-/* line 46, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header nav li a i:hover {
-  font-size: 25px;
+/* line 45, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #nav-header li #cart-ico:hover, #header #nav-header li #cart-ico.active {
+  font-size: 28px;
 }
 
 /*# sourceMappingURL=header.css.map */
