@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* Importamos la fuente Lato (Google Fonts) */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 /* Configuración general */
 /* line 5, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
 * {
@@ -8,75 +8,869 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+}
+
+/* line 12, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+html {
   scroll-behavior: smooth;
 }
 
-/* Body */
-/* line 14, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body {
-  width: 100%;
-  /* Párrafos */
-  /* H1 */
-  /* H2 */
-  /* H3 */
-  /* H4 */
-  /* Enlaces */
-  /* ? */
-  /* ? */
-  /* Logo */
-}
-
-/* line 18, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body p {
-  font-size: 16px;
-  color: #465b52;
-  margin: 15px 0 20 0;
-}
-
-/* line 25, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body h1 {
+/* line 16, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+h1 {
   font-size: 50px;
   line-height: 64px;
   color: #222;
 }
 
-/* line 32, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body h2 {
+/* line 22, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+h2 {
   font-size: 46px;
   line-height: 54px;
   color: #222;
 }
 
-/* line 39, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body h3 {
+/* line 28, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+h4 {
   font-size: 20px;
   color: #222;
 }
 
-/* line 45, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body h4 {
+/* line 33, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+h6 {
   font-weight: 700;
   font-size: 12px;
 }
 
-/* line 51, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body a {
-  cursor: pointer;
+/* line 38, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+p {
+  font-size: 16px;
+  color: #222;
+  margin: 15px 0 20px 0;
 }
 
-/* line 56, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body .section-p1 {
+/* line 44, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #222;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+/* line 57, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+button.white {
+  background: transparent;
+  padding: 11px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  outline: none;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: 0.2 ease;
+}
+
+/* line 69, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+.section-p1 {
   padding: 40px 80px;
 }
 
-/* line 61, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body .section-m1 {
+/* line 73, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+.section-m1 {
   margin: 40px 0;
 }
 
-/* line 66, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
-body .logo {
-  height: 10vh;
+/* line 77, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+body {
+  width: 100%;
+}
+
+/* Shop Page */
+/* line 83, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#page-header {
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../images/banner/b1.jpg");
+  background-size: cover;
+  padding: 14px;
+}
+
+/* line 94, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#page-header h2,
+#page-header p {
+  color: #fff;
+}
+
+/* line 99, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#pagination {
+  text-align: center;
+}
+
+/* line 103, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#pagination a {
+  text-decoration: none;
+  background: #088178;
+  padding: 15px 20px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* line 112, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#pagination a i {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Single Product */
+/* line 119, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* line 124, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-image {
+  width: 40%;
+  margin-right: 50px;
+}
+
+/* line 129, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 134, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+/* line 139, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details {
+  width: 50%;
+  padding-top: 30px;
+}
+
+/* line 144, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details h4 {
+  padding: 40px 0 20px 0;
+}
+
+/* line 148, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details h2 {
+  font-size: 26px;
+}
+
+/* line 152, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+/* line 158, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/* line 166, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details input:focus {
+  outline: none;
+}
+
+/* line 170, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details button {
+  background: #088178;
+  color: #fff;
+}
+
+/* line 175, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#prodetails .single-pro-details span {
+  line-height: 25px;
+}
+
+/* Blog Page */
+/* line 181, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog {
+  padding: 150px 150px 0 150px;
+}
+
+/* line 185, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#page-header.blog-header {
+  background-image: url("../images/banner/b19.jpg");
+}
+
+/* line 189, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding-bottom: 90px;
+}
+
+/* line 198, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-img {
+  width: 50%;
+  margin-right: 40px;
+}
+
+/* line 203, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* line 209, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-details {
+  width: 50%;
+}
+
+/* line 213, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-details a {
+  text-decoration: none;
+  font-size: 11px;
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* line 222, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-details a::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  background-color: #000;
+  top: 4px;
+  right: -60px;
+  position: absolute;
+}
+
+/* line 232, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-details a:hover {
+  color: #088178;
+}
+
+/* line 236, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-details a:hover::after {
+  background-color: #088178;
+}
+
+/* line 240, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#blog .blog-box h1 {
+  position: absolute;
+  font-weight: 700;
+  font-size: 70px;
+  color: #c9cbce;
+  top: -40px;
+  left: 0;
+  z-index: -9;
+}
+
+/* About Page */
+/* line 252, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#page-header.about-header {
+  background-image: url("../images/about/banner.png");
+}
+
+/* line 256, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#about-head {
+  display: flex;
+  align-items: center;
+}
+
+/* line 261, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#about-head img {
+  width: 50%;
+  height: auto;
+}
+
+/* line 266, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#about-head div {
+  padding-left: 40px;
+}
+
+/* line 270, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#about-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+/* line 278, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#about-app .video {
+  width: 70%;
+  height: 100%;
+  margin-top: 30px;
+}
+
+/* line 284, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#about-app .video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* Contact Page */
+/* line 292, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* line 298, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .details {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* line 305, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .details span,
+#form-details span {
+  font-size: 12px;
+}
+
+/* line 310, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .details h2,
+#form-details h2 {
+  font-size: 26px;
+  line-height: 35px;
+  padding: 20px 0;
+}
+
+/* line 317, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .details h3 {
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+
+/* line 322, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .details li {
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+
+/* line 328, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .details li i {
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+/* line 333, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .details li p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* line 338, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .map {
+  width: 55%;
+  height: 400px;
+}
+
+/* line 343, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#contact-details .map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 348, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 80px;
+  border: 1px solid #e1e1e1;
+}
+
+/* line 356, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details form {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* line 363, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details form input,
+#form-details form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  outline: none;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+}
+
+/* line 372, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details form button {
+  background-color: #088178;
+  color: #fff;
+}
+
+/* line 377, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details .people div {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 25px;
+}
+
+/* line 383, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details .people img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+/* line 390, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details .people p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 25px;
+}
+
+/* line 396, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#form-details .people p span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Cart Page */
+/* line 405, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart {
+  overflow-x: auto;
+}
+
+/* line 409, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+/* line 416, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table img {
+  width: 70px;
+}
+
+/* line 420, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table td:nth-child(1) {
+  width: 100px;
+  text-align: center;
+}
+
+/* line 425, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table td:nth-child(2) {
+  width: 150px;
+  text-align: center;
+}
+
+/* line 430, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table td:nth-child(3) {
+  width: 250px;
+  text-align: center;
+}
+
+/* line 435, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+  width: 150px;
+  text-align: center;
+}
+
+/* line 442, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table td:nth-child(5) input {
+  width: 70px;
+  padding: 10px 5px 10px 15px;
+}
+
+/* line 447, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table thead {
+  border: 1px solid #e2e9e1;
+  border-left: none;
+  border-right: none;
+}
+
+/* line 453, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table thead td {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+}
+
+/* line 460, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table tbody tr td {
+  padding-top: 15px;
+}
+
+/* line 464, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart table tbody td {
+  font-size: 13px;
+}
+
+/* line 468, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cart-add {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* line 474, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cuopon {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+/* line 479, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cuopon h3,
+#subtotal h3 {
+  padding-bottom: 15px;
+}
+
+/* line 484, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cuopon input {
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #e2e9e1;
+}
+
+/* line 492, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#cuopon button,
+#subtotal button {
+  background: #088178;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+/* line 499, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#subtotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;
+  padding: 30px;
+}
+
+/* line 506, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#subtotal table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* line 512, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+#subtotal table td {
+  width: 50%;
+  border: 1px solid #e2e9e1;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* Start Media Query */
+@media (max-width: 799px) {
+  /* line 522, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  .section-p1 {
+    padding: 40px;
+  }
+  /* line 525, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: fixed;
+    top: 0px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #e3e6f3;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    padding: 80px 0 0 10px;
+  }
+  /* line 540, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #navbar li {
+    margin-bottom: 25px;
+  }
+  /* line 543, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #navbar.active {
+    right: 0;
+  }
+  /* line 546, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #mobile {
+    display: flex;
+  }
+  /* line 549, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #mobile i {
+    color: #1a1a1a;
+    font-size: 24px;
+    padding-left: 20px;
+  }
+  /* line 554, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #bar {
+    display: initial;
+  }
+  /* line 557, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #close {
+    display: initial;
+    font-size: 24px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #222;
+  }
+  /* line 565, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #lg-bag,
+  #lg-search {
+    display: none;
+  }
+  /* line 569, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #hero {
+    padding: 0 80px;
+    height: 70vh;
+    background-position: top 30% right 30%;
+  }
+  /* line 574, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #feature {
+    justify-content: center;
+  }
+  /* line 577, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #feature .fe-box {
+    margin: 15px;
+  }
+  /* line 580, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #product1 .pro-container {
+    justify-content: center;
+  }
+  /* line 583, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #product1 .pro {
+    margin: 15px;
+  }
+  /* line 586, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #banner {
+    height: 20vh;
+  }
+  /* line 589, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #sm-banner .banner-box {
+    min-width: 100%;
+    height: 30vh;
+    padding: 30px;
+  }
+  /* line 594, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 40px;
+  }
+  /* line 600, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #banner3 .banner-box {
+    width: 28%;
+  }
+  /* line 603, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #newsletter .form {
+    width: 70%;
+  }
+  /* Contact Page */
+  /* line 607, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #form-details {
+    padding: 40px;
+  }
+  /* line 610, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #form-details form {
+    width: 50%;
+  }
+}
+
+@media (max-width: 477px) {
+  /* line 616, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  .section-p1 {
+    padding: 20px;
+  }
+  /* line 619, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  h1 {
+    font-size: 38px;
+  }
+  /* line 622, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  h2 {
+    font-size: 32px;
+  }
+  /* line 625, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #header {
+    padding: 10px 30px;
+  }
+  /* line 628, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #hero {
+    padding: 0 20px;
+    height: 70vh;
+    background-position: 55%;
+  }
+  /* line 633, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #feature {
+    justify-content: space-between;
+  }
+  /* line 636, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #feature .fe-box {
+    width: 155px;
+    margin: 0 0 15px 0;
+  }
+  /* line 640, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #product1 .pro {
+    width: 100%;
+  }
+  /* line 643, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #banner {
+    height: 40vh;
+  }
+  /* line 646, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #sm-banner .banner-box {
+    height: 40vh;
+  }
+  /* line 649, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #sm-banner .banner-box {
+    margin-top: 20px;
+  }
+  /* line 652, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #banner3 {
+    padding: 0 20px;
+  }
+  /* line 655, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #banner3 .banner-box {
+    width: 100%;
+  }
+  /* line 658, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #newsletter {
+    padding: 40px 20px;
+  }
+  /* line 661, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #newsletter .form {
+    width: 100%;
+  }
+  /* line 664, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  footer .copyright {
+    text-align: start;
+  }
+  /* Blog Page */
+  /* line 668, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #blog {
+    padding: 100px 20px 20px 20px;
+  }
+  /* line 671, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #blog .blog-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  /* line 675, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #blog .blog-img {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+  /* line 680, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #blog .blog-details {
+    width: 100%;
+  }
+  /* line 683, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #about-app .video {
+    width: 100%;
+  }
+  /* About Page */
+  /* line 687, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #about-head {
+    flex-direction: column;
+  }
+  /* line 690, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #about-head img {
+    width: 100%;
+  }
+  /* line 693, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #about-head div {
+    padding-top: 20px;
+    padding-left: 0px;
+  }
+  /* Contact Page */
+  /* line 698, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #contact-details .details {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  /* line 702, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #contact-details .map {
+    width: 100%;
+  }
+  /* line 705, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #contact-details {
+    flex-wrap: wrap;
+  }
+  /* line 708, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #form-details {
+    margin: 10px;
+    padding: 30px 10px;
+    flex-wrap: wrap;
+  }
+  /* line 713, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #form-details form {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+  /* Cart Page */
+  /* line 718, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #cart-add {
+    flex-direction: column;
+  }
+  /* line 721, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #cuopon,
+  #subtotal {
+    width: 100%;
+  }
+  /* line 725, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #subtotal {
+    padding: 20px;
+  }
+  /* SIngle Product */
+  /* line 729, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #prodetails {
+    flex-direction: column;
+  }
+  /* line 732, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #prodetails .single-pro-image {
+    width: 100%;
+    margin-right: 0px;
+  }
+  /* line 736, C:/xampp/htdocs/Proyectos/Web/styles/scss/style.scss */
+  #prodetails .single-pro-details {
+    width: 100%;
+    padding-top: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
