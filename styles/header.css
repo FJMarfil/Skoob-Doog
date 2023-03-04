@@ -1,62 +1,71 @@
-/* Header */
-/* line 2, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+/* line 1, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
 #header {
-  /* Navegador */
-}
-
-/* line 4, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #nav-header {
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  box-shadow: 0 0 16px #821818;
+  justify-content: space-between;
+  padding: 20px 80px;
   background: #821818;
-  position: fixed;
+  position: sticky;
+  top: 0;
   left: 0;
-  z-index: 100;
-  /* Logo */
-  /* Lista de enlaces */
+  z-index: 999;
+  box-shadow: 0 0 16px #821818;
 }
 
-/* line 16, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #nav-header .logo {
-  margin: 8px 0;
+/* line 13, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* line 21, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #nav-header li {
+/* line 18, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #navbar li {
   list-style: none;
-  display: inline-block;
-  padding: 0 10px;
-  /* Enlaces */
-  /* Icono de carrito */
+  padding: 0 20px;
+  position: relative;
 }
 
-/* line 27, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #nav-header li a {
+/* line 23, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #navbar li a {
   text-decoration: none;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+/* line 30, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #navbar li a:hover, #header #navbar li a.active {
   color: #fff;
-  transition: 0.3s;
 }
 
 /* line 34, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #nav-header li a:hover, #header #nav-header li a.active {
-  font-size: 18px;
-  text-shadow: 0px 1px 4px;
-}
-
-/* line 41, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #nav-header li #cart-ico {
-  margin-left: 5px;
-  font-size: 24px;
+#header #navbar li a:hover::after, #header #navbar li a.active::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
 }
 
 /* line 45, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #nav-header li #cart-ico:hover, #header #nav-header li #cart-ico.active {
-  font-size: 28px;
+#header #navbar li a i {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* line 53, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #mobile {
+  display: none;
+  align-items: center;
+}
+
+/* line 58, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
+#header #close {
+  display: none;
 }
 
 /*# sourceMappingURL=header.css.map */
