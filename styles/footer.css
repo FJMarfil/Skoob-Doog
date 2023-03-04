@@ -1,0 +1,77 @@
+/* line 1, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* line 6, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer .logo {
+  margin-bottom: 30px;
+  border-radius: 50%;
+}
+
+/* line 11, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer .follow {
+  margin-top: 20px;
+}
+
+/* line 14, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer .follow i {
+  color: #222;
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+/* line 21, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer h4 {
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+/* line 26, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer p {
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+/* line 31, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* line 38, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer a {
+  font-size: 13px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* line 46, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer .install .row img {
+  border: 1px solid #82181831;
+  border-radius: 6px;
+}
+
+/* line 51, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer .install img {
+  margin: 10px 0 15px 0;
+}
+
+/* line 56, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer footer .copyright {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 61, C:/xampp/htdocs/Proyectos/Web/styles/scss/footer.scss */
+footer .follow i:hover,
+footer a:hover {
+  color: #821818c9;
+}
+
+/*# sourceMappingURL=footer.css.map */
