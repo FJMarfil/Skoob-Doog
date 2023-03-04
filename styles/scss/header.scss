@@ -1,52 +1,61 @@
-/* Header */
 #header {
-    /* Navegador */
-    #nav-header {
-        width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #821818;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 0 16px #821818;
+
+    #navbar {
         display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        box-shadow: 0 0 16px #821818;
-        background: #821818;
-        position: fixed;
-        left: 0;
-        z-index: 100;
+        justify-content: center;
 
-        /* Logo */
-        .logo {
-            margin: 8px 0;
-        }
-
-        /* Lista de enlaces */
         li {
             list-style: none;
-            display: inline-block;
-            padding: 0 10px;
+            padding: 0 20px;
+            position: relative;
 
-            /* Enlaces */
             a {
                 text-decoration: none;
                 font-size: 16px;
-                font-weight: 700;
-                color: #fff;
-                transition: 0.3s;
+                font-weight: 600;
+                color: #1a1a1a;
+                transition: 0.3s ease;
 
                 &:hover,
                 &.active {
-                    font-size: 18px;
-                    text-shadow: 0px 1px 4px;
+                    color: #fff;
+
+                    &::after {
+                        content: "";
+                        width: 30%;
+                        height: 2px;
+                        background: #fff;
+                        position: absolute;
+                        bottom: -4px;
+                        left: 20px;
+                    }
                 }
-            }
-            /* Icono de carrito */
-            #cart-ico {
-                margin-left: 5px;
-                font-size: 24px;
 
-                &:hover,
-                &.active {
-                    font-size: 28px;
+                i {
+                    font-weight: 500;
+                    font-size: 20px;
                 }
             }
         }
+    }
+
+    #mobile {
+        display: none;
+        align-items: center;
+    }
+
+    #close {
+        display: none;
     }
 }
