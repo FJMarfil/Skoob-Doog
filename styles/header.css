@@ -31,7 +31,7 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #222;
   transition: 0.3s ease;
 }
 
@@ -55,17 +55,6 @@
 #header #navbar li a i {
   font-weight: 500;
   font-size: 20px;
-}
-
-/* line 53, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #mobile {
-  display: none;
-  align-items: center;
-}
-
-/* line 58, C:/xampp/htdocs/Proyectos/Web/styles/scss/header.scss */
-#header #close {
-  display: none;
 }
 
 /*# sourceMappingURL=header.css.map */

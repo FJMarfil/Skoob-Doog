@@ -24,7 +24,7 @@
                 text-decoration: none;
                 font-size: 16px;
                 font-weight: 600;
-                color: #1a1a1a;
+                color: #222;
                 transition: 0.3s ease;
 
                 &:hover,
@@ -48,14 +48,5 @@
                 }
             }
         }
-    }
-
-    #mobile {
-        display: none;
-        align-items: center;
-    }
-
-    #close {
-        display: none;
     }
 }
