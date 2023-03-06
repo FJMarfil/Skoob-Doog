@@ -9,8 +9,6 @@
 
     <title>Skoob Doog</title>
 
-    <link rel="stylesheet" href="style.css" />
-
     <!--Importamos la librería font-awesome (contiene fuentes e iconos que utilizaremos)-->
     <link
       rel="stylesheet"
@@ -19,68 +17,75 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
   </head>
 
   <body>
-    <section>
-      <nav>
-        <div class="logo">
-          <img src="media/logo.png" />
-        </div>
+    <!--Header-->
+    <section id="header">
+      <nav id="nav-header">
+        <a href="#"
+          ><img src="images/logo.png" class="logo" alt="Skoob Doog"
+        /></a>
 
         <ul>
-          <li><a href="#Home">Inicio</a></li>
-          <li><a href="#About">Información</a></li>
-          <li><a href="#Featured">Destacados</a></li>
-          <li><a href="#Arrivals">Nuevo</a></li>
-          <li><a href="#Reviews">Reviews</a></li>
-          <li><a href="#Blog">Blog</a></li>
+          <li><a class="active" href="index.html">Inicio</a></li>
+          <li><a href="shop.html">Tienda</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">Sobre nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+          <li>
+            <a id="cart-ico" href="cart.html"
+              ><i class="fa-sharp fa-solid fa-bag-shopping"></i
+            ></a>
+          </li>
         </ul>
-
-        <!--Aquí pondremos los iconos de Font Awesome-->
-        <div class="iconos_fa">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
       </nav>
+    </section>
 
+    <!--Hero-->
+    <section id="hero">
       <div class="main">
         <div class="main_tag">
-          <h1>Bienvenido a<br /><span>SKOOB DOOG</span></h1>
+          <h1>Welcome to<br /><span>SKOOB DOOG</span></h1>
 
           <p>Tu librería de confianza. ¡Tenemos el libro que buscas!</p>
           <a href="#" class="main_btn">Ver catálogo</a>
         </div>
 
         <div class="main_img">
-          <img src="media/444.png" />
+          <img src="images/444.png" />
         </div>
       </div>
     </section>
 
     <!--Servicios-->
-
-    <div class="servicios">
-      <div class="servicios_caja">
-        <div class="servicios_tarjeta">
+    <div class="services">
+      <div class="services_box">
+        <div class="services_card">
           <i class="fa-solid fa-truck-fast"></i>
           <h3>Envíos rápidos</h3>
           <p>Realiza un pedido y obtén tu libro en muy poco tiempo.</p>
         </div>
 
-        <div class="servicios_tarjeta">
+        <div class="services_card">
           <i class="fa-solid fa-headset"></i>
           <h3>Asistencia</h3>
-          <p>Si tiene algún problema o duda, no dude en contactar con nosotros.</p>
+          <p>
+            Si tiene algún problema o duda, no dude en contactar con nosotros.
+          </p>
         </div>
 
-        <div class="servicios_tarjeta">
+        <div class="services_card">
           <i class="fa-solid fa-tag"></i>
           <h3>Mejores precios</h3>
           <p>Garantizamos el mejor precio de mercado.</p>
         </div>
 
-        <div class="servicios_tarjeta">
+        <div class="services_card">
           <i class="fa-solid fa-lock"></i>
           <h3>Pago seguro</h3>
           <p>Servicio de pago a través de intermediario seguro.</p>
@@ -88,19 +93,22 @@
       </div>
     </div>
 
-    <!--About-->
-
+    <!--Sobre nosotros-->
     <div class="about">
       <div class="about_image">
-        <img src="media/about.png" />
+        <img src="images/about.png" />
       </div>
       <div class="about_tag">
         <h1>Sobre nosotros</h1>
         <p>
-          Somos un equipo de personas que compartimos el amor por la lectura y queremos transmitirlo al resto.
+          Somos un equipo de personas que compartimos el amor por la lectura y
+          queremos transmitirlo al resto.
         </p>
         <a href="#" class="about_btn">Más información</a>
       </div>
     </div>
+
+    <!--Script-->
+    <script src="scripts/script.js"></script>
   </body>
 </html>
