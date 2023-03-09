@@ -1,11 +1,11 @@
 #mobile {
-        display: none;
-        align-items: center;
-    }
+    display: none;
+    align-items: center;
+}
 
-    #close {
-        display: none;
-    }
+#close {
+    display: none;
+}
 
 /* Start Media Query */
 @media (max-width: 799px) {
@@ -22,25 +22,30 @@
         right: -300px;
         width: 300px;
         height: 100vh;
-        background: #f0f3e3;
-        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        background: #8218185b;
+        box-shadow: 0 15px 12px #8218185b;
         transition: 0.3s;
         padding: 80px 0 0 10px;
+
+        li {
+            margin-bottom: 25px;
+        }
+
+        &.active {
+            right: 0;
+        }
     }
-    #navbar li {
-        margin-bottom: 25px;
-    }
-    #navbar.active {
-        right: 0;
-    }
+
     #mobile {
         display: flex;
+
+        i {
+            color: #1a1a1a;
+            font-size: 24px;
+            padding-left: 20px;
+        }
     }
-    #mobile i {
-        color: #1a1a1a;
-        font-size: 24px;
-        padding-left: 20px;
-    }
+
     #bar {
         display: initial;
     }
@@ -63,10 +68,12 @@
     }
     #feature {
         justify-content: center;
+
+        .fe-box {
+            margin: 15px;
+        }
     }
-    #feature .fe-box {
-        margin: 15px;
-    }
+
     #product1 .pro-container {
         justify-content: center;
     }
@@ -86,19 +93,22 @@
         justify-content: space-between;
         flex-wrap: wrap;
         padding: 0 40px;
+
+        .banner-box {
+            width: 28%;
+        }
     }
-    #banner3 .banner-box {
-        width: 28%;
-    }
+
     #newsletter .form {
         width: 70%;
     }
     /* Contact Page */
     #form-details {
         padding: 40px;
-    }
-    #form-details form {
-        width: 50%;
+
+        form {
+            width: 50%;
+        }
     }
 }
 
@@ -122,11 +132,13 @@
     }
     #feature {
         justify-content: space-between;
+
+        #feature .fe-box {
+            width: 155px;
+            margin: 0 0 15px 0;
+        }
     }
-    #feature .fe-box {
-        width: 155px;
-        margin: 0 0 15px 0;
-    }
+
     #product1 .pro {
         width: 100%;
     }
@@ -147,63 +159,75 @@
     }
     #newsletter {
         padding: 40px 20px;
+
+        .form {
+            width: 100%;
+        }
     }
-    #newsletter .form {
-        width: 100%;
-    }
+
     footer .copyright {
         text-align: start;
     }
     /* Blog Page */
     #blog {
         padding: 100px 20px 20px 20px;
+
+        .blog-box {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .blog-img {
+            width: 100%;
+            margin-right: 0px;
+            margin-bottom: 30px;
+        }
+
+        .blog-details {
+            width: 100%;
+        }
     }
-    #blog .blog-box {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    #blog .blog-img {
-        width: 100%;
-        margin-right: 0px;
-        margin-bottom: 30px;
-    }
-    #blog .blog-details {
-        width: 100%;
-    }
+
     #about-app .video {
         width: 100%;
     }
     /* About Page */
     #about-head {
         flex-direction: column;
+
+        img {
+            width: 100%;
+        }
+        div {
+            padding-top: 20px;
+            padding-left: 0px;
+        }
     }
-    #about-head img {
-        width: 100%;
-    }
-    #about-head div {
-        padding-top: 20px;
-        padding-left: 0px;
-    }
+
     /* Contact Page */
-    #contact-details .details {
-        width: 100%;
-        padding-bottom: 30px;
-    }
-    #contact-details .map {
-        width: 100%;
-    }
+
     #contact-details {
         flex-wrap: wrap;
+
+        .details {
+            width: 100%;
+            padding-bottom: 30px;
+        }
+        .map {
+            width: 100%;
+        }
     }
     #form-details {
         margin: 10px;
         padding: 30px 10px;
         flex-wrap: wrap;
+
+        form {
+            width: 100%;
+            padding-bottom: 30px;
+        }
     }
-    #form-details form {
-        width: 100%;
-        padding-bottom: 30px;
-    }
+
     /* Cart Page */
     #cart-add {
         flex-direction: column;
@@ -218,13 +242,14 @@
     /* SIngle Product */
     #prodetails {
         flex-direction: column;
-    }
-    #prodetails .single-pro-image {
-        width: 100%;
-        margin-right: 0px;
-    }
-    #prodetails .single-pro-details {
-        width: 100%;
-        padding-top: 30px;
+
+        .single-pro-image {
+            width: 100%;
+            margin-right: 0px;
+        }
+        .single-pro-details {
+            width: 100%;
+            padding-top: 30px;
+        }
     }
 }
