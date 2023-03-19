@@ -23,27 +23,7 @@
 
   <body>
     <!--Header-->
-    <section id="header">
-      <a href="#"><img src="images/logo.png" class="logo" alt="" /></a>
-
-      <div>
-        <ul id="navbar">
-          <li><a class="active" href="index.html">Inicio</a></li>
-          <li><a href="shop.html">Tienda</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">Sobre nosotros</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-          <li id="lg-bag">
-            <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
-          </li>
-          <a href="#" id="close"><i class="far fa-times"></i></a>
-        </ul>
-      </div>
-      <div id="mobile">
-        <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-      </div>
-    </section>
+    <?php include "header.html"?>
 
     <!--Hero-->
     <section id="hero">
@@ -373,53 +353,7 @@
     </section>
 
     <!--Footer-->
-    <footer class="section-p1">
-      <div class="col">
-        <img class="logo" src="images/logo-with-background.png" alt="" />
-        <h4>Contact</h4>
-        <p>
-          <strong>Dirección:</strong> 11300 Calle del callejón, 3, La Línea de
-          la Concepción (Cádiz)
-        </p>
-        <p><strong>Teléfono:</strong> +34 606665432</p>
-        <p>
-          <strong>Horario:</strong> 09:00 - 13:00, 17:00 - 20:00. De lunes a
-          Viernes
-        </p>
-        <div class="follow">
-          <h4>Síguenos</h4>
-          <div class="icon">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-pinterest-p"></i>
-            <i class="fab fa-youtube"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <h4>Información</h4>
-        <a href="#">Sobre nosotros</a>
-        <a href="#">Envío</a>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Contáctanos</a>
-      </div>
-
-      <div class="col">
-        <h4>Mi cuenta</h4>
-        <a href="#">Registrarse</a>
-        <a href="#">Ver carrito</a>
-        <a href="#">Mi lista de deseos</a>
-        <a href="#">Seguir mi pedido</a>
-        <a href="#">Ayuda</a>
-      </div>
-
-      <div class="copyright">
-        <p>© 2023, Skoob Doog</p>
-      </div>
-    </footer>
+    <?php include "footer.html"?>
 
     <!--Script-->
     <script src="scripts/script.js"></script>
