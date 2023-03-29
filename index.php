@@ -25,7 +25,7 @@
 
   <body>
     <!--Header-->
-    <?php include "header.html"?>
+    <?php include "header.php"?>
 
     <!--Hero-->
     <section id="hero">
