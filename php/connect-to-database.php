@@ -15,6 +15,7 @@ $conn = new mysqli($serverName, $userName, $password, $dataBase);
 //Si la conexión falla nos mostrará un mensaje de error
 if ($conn->connect_error) {
     die("La conexión ha fallado: " . $conn->connect_error);
+    exit();
 } else {
     echo "Conexión realizada";
 }
