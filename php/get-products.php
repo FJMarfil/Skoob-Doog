@@ -34,7 +34,8 @@ function getProducts()
         array_push($products, $product);
     }
 
-    // Cerrar la conexión con la base de datos
+    // Liberar memoria y cerrar la conexión con la base de datos
+    mysqli_free_result($result);
     mysqli_close($conn);
 
     // Devolver array con los datos
