@@ -1,12 +1,13 @@
 <?php
 
-function getAuthorName($bookIsbn)
+// Función que devuelve el nombre del autor según su ID
+function getAuthorName($authorId)
 {
     // Conexión a base de datos
     require("connect-to-database.php");
 
     // Consulta para obtener datos de la base de datos
-    $query = "SELECT author.author_name FROM book JOIN author ON book.author_id = author.author_id WHERE book.book_isbn = $bookIsbn;";
+    $query = "SELECT author.author_name FROM author WHERE author_id = $authorId;";
 
     // Ejecutar la consulta
     $result = mysqli_query($conn, $query);
@@ -19,12 +20,19 @@ function getAuthorName($bookIsbn)
 
     // Obtener el nombre de la base de datos y mostrarlo
     $row = mysqli_fetch_assoc($result);
+
+    $authorName = "";
+
     if ($row) {
-        echo $row['author_name'];
+        $authorName = $row["author_name"];
     }
 
-    // Cerrar la conexión con la base de datos
+    // Liberar memoria y cerrar la conexión con la base de datos
+    mysqli_free_result($result);
     mysqli_close($conn);
+    
+    // Devolver el nombre del autor
+    return $authorName;
 }
 
 ?>
