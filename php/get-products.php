@@ -28,7 +28,8 @@ function getProducts()
             "price" => $row["book_price"],
             "stock" => $row["book_stock"],
             "author" => $row["author_id"],
-            "publisher" => $row["publisher_id"]
+            "publisher" => $row["publisher_id"],
+            "category" => $row["bookCategory_id"]
         );
         array_push($products, $product);
     }
