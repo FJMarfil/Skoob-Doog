@@ -12,11 +12,16 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
     <link rel="stylesheet" href="styles/style.css" />
+
+    <!--TODO: Quitar enlaces comentados-->
     <!--
         <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/responsive.css" />
 -->
+
+    <!--Conexión a base de datos-->
+    <?php require("php/connect-to-database.php"); ?>
 </head>
 
 <body>
@@ -34,6 +39,30 @@
     <?php
     // TODO: Cambiar nombre de imágenes de producto por ISBN.
     // TODO: Añadir productos desde base de datos.
+
+    // TODO: Hacer que cree una sección de libro por cada libro que exista para mostrar todos los productos.
+
+    // Consulta para obtener datos de la base de datos
+    $query = "SELECT * FROM book";
+
+    // Ejecutar la consulta
+    $result = mysqli_query($conn, $query);
+
+    // Comprobar si hay algún error en la consulta
+    if (!$result) {
+        echo "Error en la consulta: " . mysqli_errno($conn);
+        exit();
+    }
+
+    // Mostrar los datos obtenidos
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "ISBN: " . $row["book_isbn"] . " " . $row["book_title"] . "<br />";
+    }
+
+    // Cerrar la conexión con la base de datos
+    mysqli_close($conn);
+
+
     ?>
     <section id="product1" class="section-p1">
         <div class="pro-container">
