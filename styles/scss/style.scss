@@ -265,15 +265,15 @@ body {
                 transition: 0.2s;
             }
 
-            i {
-                color: rgb(240, 177, 18);
-                font-size: 12px;
-            }
-
             h4 {
                 padding-top: 7px;
                 font-size: 15px;
                 font-weight: 700;
+                color: #222;
+            }
+
+            h3 {
+                font-size: 16px;
                 color: #222;
             }
         }
@@ -452,8 +452,6 @@ footer {
         color: #821818c9;
     }
 }
-
-/*  */
 
 /* Shop Page */
 
