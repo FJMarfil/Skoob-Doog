@@ -20,8 +20,13 @@
     <link rel="stylesheet" href="styles/responsive.css" />
 -->
 
-    <!--Conexión a base de datos-->
-    <?php require("php/connect-to-database.php"); ?>
+    <?php
+    // Conectar a la base de datos
+    require("php/connect-to-database.php");
+    // Añadir la función para obtener productos
+    require("php/get-products.php");
+    ?>
+
 </head>
 
 <body>
@@ -37,70 +42,50 @@
 
     </section>
     <?php
-    // TODO: Cambiar nombre de imágenes de producto por ISBN.
-    // TODO: Añadir productos desde base de datos.
+    // TODO: Cambiar nombre de imágenes de producto por ISBN
 
-    // TODO: Hacer que cree una sección de libro por cada libro que exista para mostrar todos los productos.
+    // TODO: Hacer que cree una sección de libro por cada libro que exista para mostrar todos los productos
 
-    // Consulta para obtener datos de la base de datos
-    $query = "SELECT * FROM book";
+    // TODO: Añadir función que obtenga el nombre de autor de un libro
 
-    // Ejecutar la consulta
-    $result = mysqli_query($conn, $query);
-
-    // Comprobar si hay algún error en la consulta
-    if (!$result) {
-        echo "Error en la consulta: " . mysqli_errno($conn);
-        exit();
-    }
-
-    // Mostrar los datos obtenidos
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "ISBN: " . $row["book_isbn"] . " " . $row["book_title"] . "<br />";
-    }
-
-    // Cerrar la conexión con la base de datos
-    mysqli_close($conn);
-
-
+    // TODO: Cambiar isbn por nombre de autor en tienda
     ?>
     <section id="product1" class="section-p1">
         <div class="pro-container">
-            <div class="pro" onclick="window.location.href='sproduct.html';">
-                <img src="img/products/f1.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+
+            <?php
+            // Llamar a la función getProducts para obtener los datos de los productos de la base de datos
+            $products = getProducts();
+
+            // Recorrer el array obteniendo los datos
+            foreach ($products as $value) {
+            ?>
+                <div class="pro" onclick="window.location.href='productox.html';">
+                    <img src="images/update/products/<?php echo $value['isbn']; ?>.png" alt="">
+                    <div class="des">
+                        <span><?php echo $value['isbn']; ?></span>
+                        <h5><?php echo $value['title']; ?></h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4><?php echo $value['price']; ?> €</h4>
                     </div>
-                    <h4>$78</h4>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="img/products/f2.jpg" alt="">
-                <div class="des">
-                    <span>adidas</span>
-                    <h5>Cartoon Astronaut T-Shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>$78</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-        </div>
+            <?php
+            }
+            ?>
         </div>
     </section>
+
+    <?php
+    // Cerrar la conexión con la base de datos
+    mysqli_close($conn);
+    ?>
 
     <section id="pagination" class="section-p1">
         <a href="#">1</a>
