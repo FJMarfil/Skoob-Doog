@@ -39,13 +39,15 @@
   <!--Header-->
   <?php include "header.php" ?>
 
+  <!--REVIEW: No hay ofertas actualmente. ¿Se van a implementar?-->
   <!--Hero-->
   <section id="hero">
     <h4>¡Nuevas ofertas!</h4>
     <h2>Super ofertas</h2>
     <h1>En muchos de nuestros libros</h1>
     <p>Ahorra hasta un 50%</p>
-    <button>Comprar ahora</button>
+    <a href="shop.php"><button>Ir a la tienda</button></a>
+
   </section>
 
   <!--Características-->
@@ -120,7 +122,7 @@
     <button class="normal">Descúbrelos</button>
   </section>
 
-  // REVIEW: Hace falta esta sección?
+  <!--REVIEW: Hace falta esta sección?-->
   <!--Nuevos productos-->
   <section id="product1" class="section-p1">
     <h2>Lecturas frescas</h2>
