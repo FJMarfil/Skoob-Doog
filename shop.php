@@ -27,6 +27,8 @@
     require("php/get-products.php");
     // Añadir función que obtiene el nombre de autor según un ISBN dado
     require("php/get-author-name.php");
+    // Añadir función que obtiene la categoría de un libro según un ISBN dado
+    require("php/get-category-name.php");
 
     ?>
 
@@ -44,9 +46,6 @@
         <p>Explora nuestro amplio catálogo</p>
 
     </section>
-    <?php
-    // TODO: Crear función que obtenga la categoría de un libro según su ISBN
-    ?>
     <section id="product1" class="section-p1">
         <div class="pro-container">
 
@@ -60,7 +59,7 @@
                 <div class="pro" onclick="window.location.href='productox.html';">
                     <img src="images/update/products/<?php echo $value['isbn']; ?>.png" alt="">
                     <div class="des">
-                        <span><?php echo $value['category']; ?></span>
+                        <span><?php echo getCategoryName($value['category']); ?></span>
                         <h3><?php echo $value['title']; ?></h3>
                         <h5><?php echo getAuthorName($value['author']); ?></h5>
                         <h4><?php echo $value['price']; ?> €</h4>
@@ -74,7 +73,8 @@
     </section>
 
     <?php
-    // Cerrar la conexión con la base de datos
+    // Liberar memoria y cerrar la conexión con la base de datos
+    mysqli_free_result($result);
     mysqli_close($conn);
     ?>
 
