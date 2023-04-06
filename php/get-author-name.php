@@ -7,7 +7,7 @@ function getAuthorName($authorId)
     require("connect-to-database.php");
 
     // Consulta para obtener datos de la base de datos
-    $query = "SELECT author.author_name FROM author WHERE author_id = $authorId;";
+    $query = "SELECT author_name FROM author WHERE author_id = $authorId;";
 
     // Ejecutar la consulta
     $result = mysqli_query($conn, $query);
