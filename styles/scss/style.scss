@@ -132,6 +132,19 @@ body {
     }
 }
 
+#lg-bag {
+    position: relative;
+  }
+
+#cart-quantity {
+    font-style: normal;
+    position: absolute;
+    top: 5px;
+    left: 40px;
+    color: #222;
+    font-size: 18px;
+  }
+
 #mobile {
     display: none;
     align-items: center;
@@ -233,7 +246,6 @@ body {
         border-radius: 25px;
         transition: 0.2s;
         position: relative;
-        cursor: pointer;
         box-shadow: 15px 15px 20px #82181817;
         margin: 15px 0;
 
@@ -248,6 +260,7 @@ body {
         img {
             width: 100%;
             border-radius: 20px;
+            cursor: pointer;
         }
 
         .des {
