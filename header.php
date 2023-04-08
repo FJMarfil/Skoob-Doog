@@ -30,6 +30,7 @@
       </li>
       <li id="lg-bag">
         <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
+        <i id="cart-quantity">2000</i>
       </li>
       <a href="#" id="close"><i class="far fa-times"></i></a>
     </ul>
