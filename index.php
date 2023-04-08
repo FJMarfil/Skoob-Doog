@@ -37,7 +37,7 @@
 
 <body>
   <!--Header-->
-  <?php include "header.php" ?>
+  <?php include "header.php"; ?>
 
   <!--REVIEW: No hay ofertas actualmente. ¿Se van a implementar?-->
   <!--Hero-->
