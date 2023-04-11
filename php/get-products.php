@@ -6,7 +6,8 @@ function getProducts()
     require("connect-to-database.php");
 
     // Consulta para obtener datos de la base de datos
-    $query = "SELECT * FROM book";
+    $query = "SELECT book.*, author.author_name, publisher.publisher_name, bookcategory.bookCategory_name FROM book INNER JOIN author ON book.author_id = author.author_id INNER JOIN publisher ON book.publisher_id = publisher.publisher_id INNER JOIN bookcategory ON book.bookCategory_id = bookcategory.bookCategory_id;";
+    
 
     // Ejecutar la consulta
     $result = mysqli_query($conn, $query);
@@ -29,7 +30,10 @@ function getProducts()
             "stock" => $row["book_stock"],
             "author" => $row["author_id"],
             "publisher" => $row["publisher_id"],
-            "category" => $row["bookCategory_id"]
+            "category" => $row["bookCategory_id"],
+            "authorName" => $row["author_name"],
+            "publisherName" => $row["publisher_name"],
+            "categoryName" => $row["bookCategory_name"]
         );
         array_push($products, $product);
     }
