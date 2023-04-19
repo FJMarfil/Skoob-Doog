@@ -81,13 +81,14 @@
     <div class="pro-container">
 
       <?php
+      // TODO: Cambiar ubicación de array a otra sección más accesible u otro archivo
       // Array donde se puede elegir libros que destacar
       $products = array(
         '9788425432026',
         '9788498891355',
         '9788490627662',
         '9788499890944'
-    );
+      );
 
       // Llamar a la función getProductByIsbn para obtener los datos de los libros para destacar
       for ($i = 0; $i < count($products); $i++) {
