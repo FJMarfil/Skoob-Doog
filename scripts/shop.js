@@ -1,44 +1,72 @@
 // Declaración de constantes y variables
-const cartContainerTable = document.querySelector(".pro-container"); // Contenedor donde estarán los productos
+const proContainer = document.querySelector(".pro-container"); // Contenedor donde estarán los productos
+const cartContainer = document.querySelector(".cart-container"); // Contenedor del carrito
 
-let cart = []; // Declarar variable de carrito
+const cartModal = document.getElementById("modalCart"); // Contenedor del carrito
+const cartButton = document.getElementById("lg-bag"); // Botón de carrito
+
 let dataArray = []; // Declarar la variable con el array de datos
+let cart = []; // Declarar variable de carrito
 
-// Obtener datos de productos en formato JSON
-const fetchPromise = fetch("php/get-products-json.php")
+// Función para obtener datos de productos en formato JSON
+const fetchPromise = fetch("php/get-products-json.php") // Constante que contiene el promise (al ser multihilo, este valor representará si la tarea del hilo ha terminado)
   .then((res) => res.json())
   .then((data) => {
     // Código utilizado con los datos obtenidos
     // Crear div con producto por cada libro registrado. Si pulsamos el botón del carrito, añadimos el producto al carrito a través de la función "addProduct"
     data.forEach((book, index) => {
-      cartContainerTable.innerHTML += `
+      proContainer.innerHTML += `
       <div class="pro">
-                    <img src="images/update/products/${book.isbn}.png" alt="">
-                    <div class="des">
-                        <span>${book.categoryName}</span>
-                        <h3>${book.title}</h3>
-                        <h5>${book.authorName}</h5>
-                        <h4>${book.price} €</h4>
-                    </div>
-                    <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
-
-                </div>
+        <img src="images/update/products/${book.isbn}.png" alt="">
+        <div class="des">
+            <span>${book.categoryName}</span>
+            <h3>${book.title}</h3>
+            <h5>${book.authorName}</h5>
+            <h4>${book.price} €</h4>
+        </div>
+        <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
+      </div>
       `;
     });
-    // console.log(data); // El array "data" es accesible aquí
-    // TODO: Añadir datos de array a variable global
-    return data;
+    return data; // Devolver el contenido de data
   })
   // Si hay un error, mostrar por consola
   .catch((error) => {
-    console.error("Error al obtener los productos:", error);
+    console.error("Error al obtener los productos: ", error);
   });
 
-fetchPromise.then((res) => {
-  dataArray = Object.values(res);
+// Cuando el hilo de la función fetch termine, agregar "data" a la variable "dataArray"
+fetchPromise.then((data) => {
+  dataArray = Object.values(data);
 });
 
 // Función que añade el producto al carrito
 function addProduct(index) {
-  console.log(dataArray[index]);
+  cart.push(dataArray[index]);
+  showCart();
 }
+
+const showCart = () => {
+  cartContainer.innerHTML = ""; // Limpiamos el contenido anterior del contenedor del carrito
+  cart.forEach((book) => {
+    const cartItem = document.createElement("div");
+    cartItem.classList.add("cart");
+    cartItem.innerHTML = `
+        <img src="images/update/products/${book.isbn}.png" alt="">
+        <div class="des">
+            <span>${book.categoryName}</span>
+            <h3>${book.title}</h3>
+            <h5>${book.authorName}</h5>
+            <h4>${book.price} €</h4>
+        </div>
+        TODO: añadir botón de eliminar producto y etiqueta de número de productos iguales y precio de suma de estos
+        TODO: añadir botón de comprar, cerrar carrito y vaciar carrito, así como etiqueta de suma total
+        TODO: al hacer click fuera del contenedor de carrito, ocultar modal
+    `;
+    cartContainer.appendChild(cartItem); // Agregamos el nuevo elemento HTML al contenedor del carrito
+  });
+};
+
+cartButton.addEventListener("click", () => {
+  cartModal.classList.toggle("modal-visible");
+});
