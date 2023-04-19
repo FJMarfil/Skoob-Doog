@@ -132,9 +132,89 @@ body {
     }
 }
 
+/* Carrito (ventana modal) */
+#modalCart {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    .cart-container {
+        height: 650px;
+        width: fit-content;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar { // Ocultar barra de scroll en carrito
+            width: 0;
+            height: 0;
+        }
+
+        .cart {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            max-width: 100%;
+            width: auto;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+
+            img {
+                max-width: 120px;
+                margin-right: 20px;
+            }
+
+            .des {
+                display: flex;
+                flex-direction: column;
+                font-size: 16px;
+                line-height: 1.5;
+                width: 50%; /* Agregar una anchura fija */
+
+                h3 {
+                    font-size: 24px;
+                    margin-bottom: 5px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    color: #821818;
+                    margin-top: 10px;
+                }
+                h5 {
+                    font-size: 18px;
+                    color: #444;
+                    margin-bottom: 5px;
+                }
+                span {
+                    font-size: 16px;
+                    color: #888;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
+.modal-hidden {
+    display: none;
+}
+
+.modal-visible {
+    display: flex;
+}
+
 #lg-bag {
     position: relative;
-  }
+    font-size: 20px;
+    cursor: pointer;
+}
 
 #cart-quantity {
     font-style: normal;
@@ -143,7 +223,7 @@ body {
     left: 40px;
     color: #222;
     font-size: 18px;
-  }
+}
 
 #mobile {
     display: none;
@@ -924,7 +1004,7 @@ footer {
         box-shadow: 0 15px 12px #8218185b;
         transition: 0.3s;
         padding: 80px 0 0 10px;
- 
+
         li {
             margin-bottom: 25px;
         }
