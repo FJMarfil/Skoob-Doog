@@ -149,7 +149,8 @@ body {
         width: fit-content;
         overflow-y: auto;
 
-        &::-webkit-scrollbar { // Ocultar barra de scroll en carrito
+        // Ocultar barra de scroll en carrito
+        &::-webkit-scrollbar {
             width: 0;
             height: 0;
         }
@@ -391,6 +392,21 @@ body {
                 font-weight: 400;
             }
         }
+    }
+}
+
+.remove-from-cart-button {
+    background-color: #821818c9;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #e74c3c;
     }
 }
 
