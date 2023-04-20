@@ -46,6 +46,10 @@ function addProduct(index) {
   showCart();
 }
 
+// TODO: añadir botón de eliminar producto y etiqueta de número de productos iguales y precio de suma de estos
+// TODO: añadir botón de comprar, cerrar carrito y vaciar carrito, así como etiqueta de suma total
+// TODO: al hacer click fuera del contenedor de carrito, ocultar modal;
+// TODO: hacer que se guarde el contenido del carrito en el DOM
 const showCart = () => {
   cartContainer.innerHTML = ""; // Limpiamos el contenido anterior del contenedor del carrito
   cart.forEach((book) => {
@@ -59,9 +63,10 @@ const showCart = () => {
             <h5>${book.authorName}</h5>
             <h4>${book.price} €</h4>
         </div>
-        TODO: añadir botón de eliminar producto y etiqueta de número de productos iguales y precio de suma de estos
-        TODO: añadir botón de comprar, cerrar carrito y vaciar carrito, así como etiqueta de suma total
-        TODO: al hacer click fuera del contenedor de carrito, ocultar modal
+        <button onclick="(() => removeProduct(${cart.indexOf(
+          book
+        )}))()" class="remove-from-cart-button" >Eliminar</button>
+
     `;
     cartContainer.appendChild(cartItem); // Agregamos el nuevo elemento HTML al contenedor del carrito
   });
@@ -70,3 +75,8 @@ const showCart = () => {
 cartButton.addEventListener("click", () => {
   cartModal.classList.toggle("modal-visible");
 });
+
+function removeProduct(index) {
+  cart.splice(index, 1);
+  showCart();
+}
