@@ -1,4 +1,4 @@
-<section id="header">
+<header>
   <a href="index.php"><img src="images/logo.png" class="logo" alt="" /></a>
 
   <div>
@@ -32,11 +32,11 @@
         <i class="far fa-shopping-bag"></i></a>
         <i id="cart-quantity">2000</i>
       </li>
-      <a href="#" id="close"><i class="far fa-times"></i></a>
     </ul>
+    <a href="#" id="close"><i class="far fa-times"></i></a>
   </div>
   <div id="mobile">
     <a href="cart.html"><i class="far fa-shopping-bag"></i></a>
     <i id="bar" class="fas fa-outdent"></i>
   </div>
-</section>
+</header>
