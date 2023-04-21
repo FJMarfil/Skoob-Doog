@@ -4,6 +4,7 @@ const cartContainer = document.querySelector(".cart-container"); // Contenedor d
 
 const cartModal = document.getElementById("modalCart"); // Contenedor del modal del carrito
 const cartButton = document.getElementById("lg-bag"); // Botón de carrito
+const cartQuantity = document.getElementById("cart-quantity"); // Etiqueta de cantidad de productos en el botón del carrito
 
 let dataArray = []; // Declarar la variable con el array de datos (recogidos de la bd)
 let cart = []; // Declarar variable de carrito
@@ -55,7 +56,6 @@ function addProduct(index) {
 // TODO: añadir botón de eliminar producto y etiqueta de número de productos iguales y precio de suma de estos
 // TODO: añadir botón de comprar, cerrar carrito y vaciar carrito, así como etiqueta de suma total
 // TODO: al hacer click fuera del contenedor de carrito, ocultar modal;
-// TODO: hacer que se guarde el contenido del carrito en el DOM
 // Función que actualiza el contenido del carrito, añadiendo los productos seleccionados y permitiendo borrarlos o pasar a la compra de estos
 const showCart = () => {
   cartContainer.innerHTML = ""; // Limpiamos el contenido anterior del contenedor del carrito
@@ -77,7 +77,8 @@ const showCart = () => {
     `;
     cartContainer.appendChild(cartItem); // Agregamos el nuevo elemento HTML al contenedor del carrito
   });
-  saveStorage();
+  cartQuantity.textContent = cart.length; // Añadir número de productos a la etiqueta del carrito
+  saveStorage(); // Pasar datos del carrito al almacenamiento local a través de la función saveStorage
 };
 
 // Función que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito

@@ -167,7 +167,6 @@ header {
         padding: 20px;
         border-radius: 5px;
         height: 650px;
-        width: 1000px;
         overflow-y: auto;
         scrollbar-width: thin; // Barra de scroll fina (Firefox)
 
@@ -194,6 +193,7 @@ header {
             background-color: #fff;
             border-bottom: 1px solid #ddd;
             padding: 20px;
+            width: 800px;
 
             img {
                 max-width: 120px;
@@ -225,7 +225,6 @@ header {
                 span {
                     font-size: 16px;
                     color: #888;
-                    text-transform: uppercase;
                 }
             }
         }
