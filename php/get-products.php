@@ -33,7 +33,8 @@ function getProducts()
             "category" => $row["bookCategory_id"],
             "authorName" => $row["author_name"],
             "publisherName" => $row["publisher_name"],
-            "categoryName" => $row["bookCategory_name"]
+            "categoryName" => $row["bookCategory_name"],
+            "quantity" => 0
         );
         array_push($products, $product);
     }
