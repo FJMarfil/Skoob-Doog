@@ -82,7 +82,7 @@
             <div class="cart-actions">
                 <button class="clear-cart">Vaciar carrito</button>
                 <button class="buy-cart">Comprar</button>
-                <span class="total-price">9999€</span>
+                <span class="total-price"></span>
             </div>
         </div>
     </div>
