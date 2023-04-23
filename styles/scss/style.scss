@@ -159,6 +159,7 @@ header {
     justify-content: center;
     align-items: center;
 
+    /* Contenedor de la ventana del modal */
     .cart-wrapper {
         background-color: #fff;
         display: flex;
@@ -185,107 +186,132 @@ header {
         &::-webkit-scrollbar-thumb {
             background-color: #821818;
         }
-        .cart {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-            padding: 20px;
-            width: 800px;
 
-            img {
-                max-width: 120px;
-                margin-right: 20px;
+        /* Contenedor del contenido principal del modal (productos) */
+        .cart-container {
+            #empty-cart-label {
+                font-size: 20px;
+                font-weight: 700;
+                color: #999;
+                margin: 30px 0;
             }
-
-            .des {
+            /* Contenedor de producto individual */
+            .cart {
                 display: flex;
-                flex-direction: column;
-                font-size: 16px;
-                line-height: 1.5;
-                width: 80%; /* Agregar una anchura fija */
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: #fff;
+                border-bottom: 1px solid #ddd;
+                padding: 20px;
+                width: 800px;
 
-                h3 {
-                    font-size: 24px;
-                    margin-bottom: 5px;
+                /* Imagen del producto */
+                img {
+                    max-width: 120px;
+                    margin-right: 20px;
                 }
 
-                h4 {
-                    font-size: 20px;
-                    color: #821818;
-                    margin-top: 10px;
-                }
-                h5 {
-                    font-size: 18px;
-                    color: #444;
-                    margin-bottom: 5px;
-                }
-                span {
+                /* Descripción del producto */
+                .des {
+                    display: flex;
+                    flex-direction: column;
                     font-size: 16px;
-                    color: #888;
+                    line-height: 1.5;
+                    width: 80%; /* Agregar una anchura fija */
+
+                    /* Título */
+                    h3 {
+                        font-size: 24px;
+                        margin-bottom: 5px;
+                    }
+                    /* Precio */
+                    h4 {
+                        font-size: 20px;
+                        color: #821818;
+                        margin-top: 10px;
+                    }
+                    /* Autor */
+                    h5 {
+                        font-size: 18px;
+                        color: #444;
+                        margin-bottom: 5px;
+                    }
+                    /* Categoría */
+                    span {
+                        font-size: 16px;
+                        color: #888;
+                    }
                 }
             }
         }
-    }
-    .cart-actions {
-        position: sticky;
-        bottom: 0;
-        font-size: 300px;
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
 
-        .clear-cart {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            color: #444;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-size: 14px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+        /* Contenedor del footer del carrito (vaciar, comprar, cerrar, precio total) */
+        .cart-actions {
+            position: sticky;
+            bottom: 0;
+            font-size: 300px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-        .buy-cart {
-            background-color: #821818;
-            border: 1px solid #821818;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-transform: uppercase;
-            font-size: 14px;
-            cursor: pointer;
-            margin-right: 10px;
-        }
+            /* Botón de vaciar carrito */
+            .clear-cart {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                color: #444;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-transform: uppercase;
+                font-size: 14px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
 
-        .total-price {
-            font-size: 20px;
-            color: #821818;
-            font-weight: bold;
+            /* Botón de comprar */
+            .buy-cart {
+                background-color: #821818;
+                border: 1px solid #821818;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-transform: uppercase;
+                font-size: 14px;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+
+            /* Etiqueta de precio total */
+            .total-price {
+                font-size: 20px;
+                color: #821818;
+                font-weight: bold;
+            }
         }
     }
 }
 
+/* Clase para ocultar modal */
 .modal-hidden {
     display: none;
 }
 
+/* Clase para mostrar modal */
 .modal-visible {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Botón de carrito (header) */
 #lg-bag {
     position: relative;
     font-size: 20px;
     cursor: pointer;
 }
 
+/* Etiqueta de cantidad de productos (header) */
 #cart-quantity {
     font-style: normal;
     position: absolute;
