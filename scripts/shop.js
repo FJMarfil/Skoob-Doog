@@ -6,12 +6,21 @@ const cartModal = document.getElementById("modalCart"); // Contenedor del modal 
 const cartButton = document.getElementById("lg-bag"); // Botón de carrito
 const cartQuantity = document.getElementById("cart-quantity"); // Etiqueta de cantidad de productos en el botón del carrito
 
+const clearCart = document.querySelector(".clear-cart"); // Botón de vaciar carrito
+const totalPrice = document.querySelector(".total-price"); // Etiqueta de precio total
+
 let dataArray = []; // Declarar la variable con el array de datos (recogidos de la bd)
 let cart = []; // Declarar variable de carrito
 
 // Función que recuperará el contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
 document.addEventListener("DOMContentLoaded", () => {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
+  showCart();
+});
+
+// Función para vaciar el carrito
+clearCart.addEventListener("click", () => {
+  cart.length = 0;
   showCart();
 });
 
@@ -49,11 +58,18 @@ fetchPromise.then((data) => {
 
 // Función que añade el producto al carrito
 function addProduct(index) {
-  cart.push(dataArray[index]);
+  // Verificar si la variable existe
+  const existingProductIndex = cart.findIndex(
+    (item) => item.isbn === dataArray[index].isbn
+  );
+  if (existingProductIndex !== -1) {
+    cart[existingProductIndex].quantity++; // Aumentar cantidad del producto en 1
+  } else {
+    cart.push({ ...dataArray[index], quantity: 1 }); // Agregar el nuevo elemento con quantity: 1
+  }
   showCart();
 }
 
-// TODO: añadir botón de eliminar producto y etiqueta de número de productos iguales y precio de suma de estos
 // TODO: añadir botón de comprar, cerrar carrito y vaciar carrito, así como etiqueta de suma total
 // TODO: al hacer click fuera del contenedor de carrito, ocultar modal;
 // Función que actualiza el contenido del carrito, añadiendo los productos seleccionados y permitiendo borrarlos o pasar a la compra de estos
@@ -70,6 +86,7 @@ const showCart = () => {
             <h5>${book.authorName}</h5>
             <h4>${book.price} €</h4>
         </div>
+        <span>${book.quantity}</span>
         <button onclick="(() => removeProduct(${cart.indexOf(
           book
         )}))()"class="remove-from-cart-button">Eliminar</button>
@@ -77,7 +94,24 @@ const showCart = () => {
     `;
     cartContainer.appendChild(cartItem); // Agregamos el nuevo elemento HTML al contenedor del carrito
   });
-  cartQuantity.textContent = cart.length; // Añadir número de productos a la etiqueta del carrito
+
+  // Si el carrito está vacío, mostrar un mensaje
+  if (cart.length === 0) {
+    cartContainer.innerHTML = `
+      <p id="empty-cart-label">¡El carrito está vacío!</p>
+    `;
+  }
+
+  const totalQuantity = cart.reduce((acc, book) => acc + book.quantity, 0); // Número total de productos añadidos
+
+  cartQuantity.textContent = totalQuantity; // Añadir número de productos a la etiqueta del carrito
+
+  // Suma del precio total de los artículos
+  totalPrice.textContent =
+    "Total: " +
+    cart.reduce((acc, book) => acc + book.quantity * book.price, 0).toFixed(2) +
+    " €"; // Límite de dos decimales para evitar errores y concatenación de símbolo de euro
+
   saveStorage(); // Pasar datos del carrito al almacenamiento local a través de la función saveStorage
 };
 
@@ -88,7 +122,12 @@ cartButton.addEventListener("click", () => {
 
 // Función que elimina un producto al hacer click en el botón "Eliminar" de dicho producto
 function removeProduct(index) {
-  cart.splice(index, 1);
+  if (cart[index].quantity === 1) {
+    // Si solo hay un producto, eliminar
+    cart.splice(index, 1);
+  } else {
+    cart[index].quantity--; // Si hay varios productos, reducir cantidad
+  }
   showCart();
 }
 
