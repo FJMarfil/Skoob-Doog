@@ -7,6 +7,8 @@ const cartButton = document.getElementById("lg-bag"); // Botón de carrito
 const cartQuantity = document.getElementById("cart-quantity"); // Etiqueta de cantidad de productos en el botón del carrito
 
 const clearCart = document.querySelector(".clear-cart"); // Botón de vaciar carrito
+const buyCart = document.querySelector(".buy-cart"); // TODO: Botón de comprar
+const closeCart = document.querySelector(".close-cart"); // Botón de cerrar carrito
 const totalPrice = document.querySelector(".total-price"); // Etiqueta de precio total
 
 let dataArray = []; // Declarar la variable con el array de datos (recogidos de la bd)
@@ -70,7 +72,6 @@ function addProduct(index) {
   showCart();
 }
 
-// TODO: añadir botón de comprar, cerrar carrito y vaciar carrito, así como etiqueta de suma total
 // TODO: al hacer click fuera del contenedor de carrito, ocultar modal;
 // Función que actualiza el contenido del carrito, añadiendo los productos seleccionados y permitiendo borrarlos o pasar a la compra de estos
 const showCart = () => {
@@ -92,7 +93,7 @@ const showCart = () => {
         )}))()"class="remove-from-cart-button">Eliminar</button>
 
     `;
-    cartContainer.appendChild(cartItem); // Agregamos el nuevo elemento HTML al contenedor del carrito
+    cartContainer.appendChild(cartItem); // Agregar el nuevo elemento HTML al contenedor del carrito
   });
 
   // Si el carrito está vacío, mostrar un mensaje
@@ -115,11 +116,6 @@ const showCart = () => {
   saveStorage(); // Pasar datos del carrito al almacenamiento local a través de la función saveStorage
 };
 
-// Función que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito
-cartButton.addEventListener("click", () => {
-  cartModal.classList.toggle("modal-visible");
-});
-
 // Función que elimina un producto al hacer click en el botón "Eliminar" de dicho producto
 function removeProduct(index) {
   if (cart[index].quantity === 1) {
@@ -135,3 +131,14 @@ function removeProduct(index) {
 function saveStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+// Función que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito
+cartButton.addEventListener("click", () => {
+  cartModal.style.display = "flex";
+  cartModal.style.flexDirection = "column";
+});
+
+// Función para cerrar el carrito
+closeCart.addEventListener("click", () => {
+  cartModal.style.display = "none";
+});
