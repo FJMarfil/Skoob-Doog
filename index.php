@@ -27,10 +27,6 @@
   require("php/connect-to-database.php");
   // Añadir la función para obtener los datos de un libro por su ISBN
   require("php/get-product-by-isbn.php");
-  // Añadir función que obtiene el nombre de autor según un ISBN dado
-  require("php/get-author-name.php");
-  // Añadir función que obtiene la categoría de un libro según un ISBN dado
-  require("php/get-category-name.php");
 
   ?>
 </head>
@@ -100,9 +96,9 @@
           <div class="pro" onclick="window.location.href='productox.html';">
             <img src="images/update/products/<?php echo $value['isbn']; ?>.png" alt="">
             <div class="des">
-              <span><?php echo getCategoryName($value['category']); ?></span>
+              <span><?php echo $value['categoryName']; ?></span>
               <h3><?php echo $value['title']; ?></h3>
-              <h5><?php echo getAuthorName($value['author']); ?></h5>
+              <h5><?php echo $value['authorName']; ?></h5>
               <h4><?php echo $value['price']; ?> €</h4>
             </div>
             <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
@@ -260,20 +256,8 @@
     </div>
   </section>
 
-  <!--Boletín de noticias-->
-  <section id="newsletter" class="section-p1 section-m1">
-    <div class="newstext">
-      <h4>Suscríbete a nuestro boletín</h4>
-      <p>
-        Recibe correos informativos sobre novedades y
-        <span>ofertas especiales</span>
-      </p>
-    </div>
-    <div class="form">
-      <input type="text" placeholder="Escribe tu correo" />
-      <button class="normal">Registrarse</button>
-    </div>
-  </section>
+  <!--Línea de separación-->
+  <hr>
 
   <!--Footer-->
   <?php include "footer.html" ?>

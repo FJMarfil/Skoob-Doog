@@ -22,6 +22,7 @@
 
     <?php
 
+    // REVIEW: 
     // Iniciar la sesión
     if (session_status() == 1) {
         session_start();
@@ -51,24 +52,11 @@
     </section>
 
     <?php
-    // Cerrar la conexión con la base de datos
-    mysqli_close($conn);
+    mysqli_close($conn); // Cerrar la conexión con la base de datos
     ?>
 
-    <!--Boletín de noticias-->
-    <section id="newsletter" class="section-p1 section-m1">
-        <div class="newstext">
-            <h4>Suscríbete a nuestro boletín</h4>
-            <p>
-                Recibe correos informativos sobre novedades y
-                <span>ofertas especiales</span>
-            </p>
-        </div>
-        <div class="form">
-            <input type="text" placeholder="Escribe tu correo" />
-            <button class="normal">Registrarse</button>
-        </div>
-    </section>
+    <!--Línea de separación-->
+    <hr>
 
     <!--Footer-->
     <?php include "footer.html" ?>
