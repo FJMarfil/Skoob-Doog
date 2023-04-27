@@ -50,7 +50,7 @@ const fetchPromise = fetch("php/get-products-json.php") // Constante que contien
     // Código utilizado con los datos obtenidos
     // Crear div con producto por cada libro registrado. Si pulsamos el botón del carrito, añadimos el producto al carrito a través de la función "addProduct"
     // Si estamos en la página de la tienda, mostrar todos los productos
-    if (location.pathname === "shop.php") {
+    if (location.pathname.includes("shop.php")) {
       dataWrite.forEach((book, index) => {
         proContainer.innerHTML += `
         <div class="pro">
