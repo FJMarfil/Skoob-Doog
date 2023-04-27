@@ -13,24 +13,14 @@
 
     <link rel="stylesheet" href="styles/style.css">
 
-    <!--TODO: Quitar enlaces comentados-->
-    <!--
-        <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="stylesheet" href="styles/responsive.css" />
--->
-
     <?php
-
     // REVIEW: 
     // Iniciar la sesión
     if (session_status() == 1) {
         session_start();
     }
 
-    // Conectar a la base de datos
-    require("php/connect-to-database.php");
-
+    require("php/connect-to-database.php"); // Conectar a la base de datos
     ?>
 </head>
 
@@ -39,13 +29,13 @@
     <!--Header-->
     <?php include "header.php" ?>
 
+    <!--Header de la sección de productos-->
     <section id="page-header">
-
         <h2>Tienda</h2>
-
         <p>Explora nuestro amplio catálogo</p>
-
     </section>
+
+    <!--Sección principal (productos)-->
     <section id="product1" class="section-p1">
         <div class="pro-container">
         </div>
@@ -61,26 +51,14 @@
     <!--Footer-->
     <?php include "footer.html" ?>
 
+    <!--Modal del carrito-->
+    <?php include "php/modal-cart.php" ?>
 
-    <div id="modalCart">
-        <div class="cart-wrapper">
-            <h2>Carrito</h2>
-            <div class="cart-container">
-            </div>
-            <div class="cart-actions">
-                <button class="clear-cart">Vaciar carrito</button>
-                <button class="buy-cart">Comprar</button>
-                <button class="close-cart">Cerrar</button>
-                <span class="total-price"></span>
-            </div>
-        </div>
-    </div>
-
-    <script src="scripts/script.js"></script>-
-
-    <!--Script del carrito-->
+    <!--Script de la tienda-->
     <script src="scripts/shop.js"></script>
 
+    <!--Script del del carrito (móvil)-->
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
