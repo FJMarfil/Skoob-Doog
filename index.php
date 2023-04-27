@@ -27,7 +27,6 @@
   require("php/connect-to-database.php");
   // Añadir la función para obtener los datos de un libro por su ISBN
   require("php/get-product-by-isbn.php");
-
   ?>
 </head>
 
@@ -76,38 +75,6 @@
     <p>Nuestra propia selección</p>
     <div class="pro-container">
 
-      <?php
-      // TODO: Cambiar ubicación de array a otra sección más accesible u otro archivo
-      // Array donde se puede elegir libros que destacar
-      $products = array(
-        '9788425432026',
-        '9788498891355',
-        '9788490627662',
-        '9788499890944'
-      );
-
-      // Llamar a la función getProductByIsbn para obtener los datos de los libros para destacar
-      for ($i = 0; $i < count($products); $i++) {
-        $product = getProductByIsbn($products[$i]);
-
-        // Recorrer el array obteniendo los datos
-        foreach ($product as $value) {
-      ?>
-          <div class="pro" onclick="window.location.href='productox.html';">
-            <img src="images/update/products/<?php echo $value['isbn']; ?>.png" alt="">
-            <div class="des">
-              <span><?php echo $value['categoryName']; ?></span>
-              <h3><?php echo $value['title']; ?></h3>
-              <h5><?php echo $value['authorName']; ?></h5>
-              <h4><?php echo $value['price']; ?> €</h4>
-            </div>
-            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-          </div>
-      <?php
-        }
-      }
-      ?>
-
 
     </div>
   </section>
@@ -125,134 +92,6 @@
     <h2>Lecturas frescas</h2>
     <p>Nuestras últimas llegadas</p>
     <div class="pro-container">
-      <div class="pro">
-        <img src="images/update/products/product-n1.png" alt="" />
-        <div class="des">
-          <span>Javier Castillo</span>
-          <h5>El cuco de cristal</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>19,95 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="images/update/products/product-n2.png" alt="" />
-        <div class="des">
-          <span>John Boyne</span>
-          <h5>Todas las piezas rotas</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>19 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="images/update/products/product-n3.png" alt="" />
-        <div class="des">
-          <span>Príncipe Harry duque de Sussex</span>
-          <h5>En la sombra</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>21,95 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="images/update/products/product-n4.png" alt="" />
-        <div class="des">
-          <span>Tracy Wolff</span>
-          <h5>Hechizo</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>18,50 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="images/update/products/product-n5.png" alt="" />
-        <div class="des">
-          <span>H. D. Carlton</span>
-          <h5>Haunting Adeline</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>18 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="images/update/products/product-n6.png" alt="" />
-        <div class="des">
-          <span>Camilla Läckberg</span>
-          <h5>La secta</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>22,75 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="images/update/products/product-n7.png" alt="" />
-        <div class="des">
-          <span>Fernando Aramburu</span>
-          <h5>Hijos de la fábula</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>19,50 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      <div class="pro">
-        <img src="images/update/products/product-n8.png" alt="" />
-        <div class="des">
-          <span>Inma Rubiales</span>
-          <h5>El arte de ser nosotros</h5>
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h4>17 €</h4>
-        </div>
-        <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
     </div>
   </section>
 
@@ -262,7 +101,13 @@
   <!--Footer-->
   <?php include "footer.html" ?>
 
-  <!--Script-->
+  <!--Modal del carrito-->
+  <?php include "php/modal-cart.php" ?>
+
+  <!--Script de la tienda-->
+  <script src="scripts/shop.js"></script>
+
+  <!--Script del del carrito (móvil)-->
   <script src="scripts/script.js"></script>
 </body>
 
