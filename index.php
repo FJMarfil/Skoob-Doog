@@ -25,8 +25,6 @@
   <?php
   // Conectar a la base de datos
   require("php/connect-to-database.php");
-  // Añadir la función para obtener los datos de un libro por su ISBN
-  require("php/get-product-by-isbn.php");
   ?>
 </head>
 
