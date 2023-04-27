@@ -102,11 +102,11 @@
   <!--Modal del carrito-->
   <?php include "php/modal-cart.php" ?>
 
-  <!--Script de la tienda-->
-  <script src="scripts/shop.js"></script>
+  <!--Script principal-->
+  <script src="scripts/main.js"></script>
 
   <!--Script del del carrito (móvil)-->
-  <script src="scripts/script.js"></script>
+  <script src="scripts/mobile.js"></script>
 </body>
 
 </html>
