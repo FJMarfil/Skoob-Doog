@@ -35,12 +35,11 @@
   <!--REVIEW: No hay ofertas actualmente. ¿Se van a implementar?-->
   <!--Hero-->
   <section id="hero">
-    <h4>¡Nuevas ofertas!</h4>
+    <h4>¡Mira nuestro catálogo!</h4>
     <h2>Super ofertas</h2>
-    <h1>En muchos de nuestros libros</h1>
-    <p>Ahorra hasta un 50%</p>
+    <h1>Tus libros preferidos al mejor precio</h1>
+    <p>Ahorra con Skoob Doog</p>
     <a href="shop.php"><button>Ir a la tienda</button></a>
-
   </section>
 
   <!--Características-->
@@ -81,20 +80,8 @@
   <section id="banner" class="section-m1">
     <h4>Los mejores libros</h4>
     <h2>Descuentos de hasta el <span>50%</span> - En selección de libros</h2>
-    <button class="normal">Descúbrelos</button>
+    <a href="shop.php"><button class="normal">Descúbrelos</button></a>
   </section>
-
-  <!--REVIEW: Hace falta esta sección?-->
-  <!--Nuevos productos-->
-  <section id="product1" class="section-p1">
-    <h2>Lecturas frescas</h2>
-    <p>Nuestras últimas llegadas</p>
-    <div class="pro-container">
-    </div>
-  </section>
-
-  <!--Línea de separación-->
-  <hr>
 
   <!--Footer-->
   <?php include "footer.html" ?>
