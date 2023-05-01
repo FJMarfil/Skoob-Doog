@@ -1,18 +1,18 @@
 <?php
 
-//Nombre del servidor
+// Nombre del servidor
 $serverName = "localhost";
-//Nombre de usuario
+// Nombre de usuario
 $userName  = "franmarfil";
-//Contraseña
+// Contraseña
 $password = "Mediterraneo@23";
-//Nombre de base de datos
+// Nombre de base de datos
 $dataBase = "skoobdoog";
 
-//Conexión con base de datos
+// Conexión con base de datos
 $conn = new mysqli($serverName, $userName, $password, $dataBase);
 
-//Si la conexión falla nos mostrará un mensaje de error
+// Si la conexión falla, mostrar un mensaje de error
 if ($conn->connect_error) {
     die("La conexión ha fallado: " . $conn->connect_error);
     exit();
