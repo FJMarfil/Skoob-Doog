@@ -9,23 +9,11 @@
 
   <title>Skoob Doog</title>
 
-  <!--Importamos la librería font-awesome (contiene fuentes e iconos que utilizaremos)-->
+  <!--Importar la librería font-awesome (contiene fuentes e iconos que se utilizarán en la web)-->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
+  <!--Importar la hoja de estilos-->
   <link rel="stylesheet" href="styles/style.css" />
-
-  <!-- TODO: Eliminar estos enlaces -->
-  <!--
-      <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/index.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="stylesheet" href="styles/responsive.css" />
--->
-
-  <?php
-  // Conectar a la base de datos
-  require("php/connect-to-database.php");
-  ?>
 </head>
 
 <body>
@@ -70,10 +58,8 @@
   <section id="product1" class="section-p1">
     <h2>Te recomendamos</h2>
     <p>Nuestra propia selección</p>
-    <div class="pro-container">
-
-
-    </div>
+    
+    <div class="pro-container"></div>
   </section>
 
   <!--Banner-->
