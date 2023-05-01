@@ -9,23 +9,14 @@
 
     <title>Tienda - Skoob Doog</title>
 
+    <!--Importar la librería font-awesome (contiene fuentes e iconos que se utilizarán en la web)-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
+    <!--Importar la hoja de estilos-->
     <link rel="stylesheet" href="styles/style.css">
-
-    <?php
-    // REVIEW: 
-    // Iniciar la sesión
-    if (session_status() == 1) {
-        session_start();
-    }
-
-    require("php/connect-to-database.php"); // Conectar a la base de datos
-    ?>
 </head>
 
 <body>
-
     <!--Header-->
     <?php include "header.php" ?>
 
@@ -37,13 +28,8 @@
 
     <!--Sección principal (productos)-->
     <section id="product1" class="section-p1">
-        <div class="pro-container">
-        </div>
+        <div class="pro-container"></div>
     </section>
-
-    <?php
-    mysqli_close($conn); // Cerrar la conexión con la base de datos
-    ?>
 
     <!--Línea de separación-->
     <hr>
