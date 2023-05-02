@@ -30,16 +30,16 @@
     <section id="about-us" class="section-p1">
         <div class="pro-container">
             <h3>Nuestra historia</h3>
-            <p>En Skoob Doog amamos la literatura y creemos que esta puede cambiar vidas. Desde nuestra fundación en el año X, nos hemos dedicado a ofrecer la mejor selección de libros a precios accesibles, con el objetivo de hacer llegar la literatura a todo el mundo.</p>
+            <p>Skoob Doog nace como el sueño de un pequeño equipo por compartir su afición a la lectura con los demás. En Skoob Doog amamos la literatura y creemos que esta puede cambiar vidas. Desde nuestra reciente fundación, nos hemos dedicado a ofrecer la mejor selección de libros a precios accesibles, con el objetivo de hacer llegar la literatura al mayor público posible.</p>
 
             <h3>Nuestra filosofía</h3>
-            <p>En Skoob Doog creemos que la lectura es un derecho y que todo el mundo debería tener acceso a los libros. Por eso, trabajamos día a día para ofrecer una selección de títulos amplia y variada, con el objetivo de que nuestros clientes encuentren lo que están buscando.</p>
+            <p>Creemos que la lectura es un derecho fundamental y que todo el mundo debería tener acceso a los libros. Por eso, trabajamos día a día para ofrecer una selección de títulos amplia y variada, así como actualizamos constantemente nuestros precios a los más bajos del mercado actual con el objetivo de que nuestros clientes encuentren lo que están buscando y en su forma más económica.</p>
 
             <h3>Nuestro equipo</h3>
             <p>En Skoob Doog contamos con un equipo de apasionados por la literatura, dedicados a ofrecer la mejor experiencia de compra a nuestros clientes. Desde el equipo de compras, hasta el de atención al cliente, todos trabajamos juntos para asegurarnos de que cada pedido llegue a su destino en perfectas condiciones.</p>
 
             <h3>Contacto</h3>
-            <p>Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes hacerlo a través de nuestro formulario de contacto o en nuestras redes sociales.</p>
+            <p>Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes hacerlo a través de nuestro teléfono o email, así como a través de nuestras redes sociales.</p>
         </div>
     </section>
 
