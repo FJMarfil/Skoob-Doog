@@ -17,7 +17,7 @@
                             } ?>>Tienda</a>
       </li>
       <li>
-        <a href="about.html" <?php if (basename($_SERVER['PHP_SELF']) == 'about.html') {
+        <a href="about.php" <?php if (basename($_SERVER['PHP_SELF']) == 'about.php') {
                                 echo 'class="active"';
                               } ?>>Sobre nosotros</a>
       </li>
