@@ -14,10 +14,6 @@
 
     <!--Importar la hoja de estilos-->
     <link rel="stylesheet" href="styles/style.css" />
-
-    <!--Conectar a la base de datos-->
-    <?php require("php/connect-to-database.php");
-    // REVIEW: Aún no se ha utilizado la base de datos ?>
 </head>
 
 <body>
