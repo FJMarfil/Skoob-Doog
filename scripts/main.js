@@ -15,13 +15,13 @@ let productList = []; // Declarar la variable con el array de productos (recogid
 let dataArray = []; // Declarar la variable con el array de datos (recogidos de la bd)
 let cart = []; // Declarar variable de carrito
 
-// Función que recuperará el contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
+// Recuperar contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
 document.addEventListener("DOMContentLoaded", () => {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
   showCart();
 });
 
-// Función para vaciar el carrito
+// Evento click: vaciar el carrito
 clearCart.addEventListener("click", () => {
   cart.length = 0;
   showCart();
@@ -66,7 +66,7 @@ const fetchPromise = fetch("php/get-products-json.php") // Constante que contien
         `;
       });
       // Si estamos en la página principal, mostrar los productos pasados por el archivo "indexProducts.txt"
-    } else {
+    } else if (location.pathname.includes("index.php")) {
       dataWrite.forEach((book, index) => {
         if (productList.includes(book.isbn)) {
           proContainer.innerHTML += `
@@ -169,13 +169,20 @@ function saveStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Función que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito
+// Evento que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito
 cartButton.addEventListener("click", () => {
   cartModal.style.display = "flex";
   cartModal.style.flexDirection = "column";
 });
 
-// Función para cerrar el carrito
+// Evento click en botón de cerrar carrito: cerrar el carrito
 closeCart.addEventListener("click", () => {
   cartModal.style.display = "none";
+});
+
+// Evento click en botón de comprar (carrito): ir a página de carrito (si hay productos añadidos al carrito)
+buyCart.addEventListener("click", () => {
+  if (cart.length !== 0) {
+    window.location.href = "purchase.php";
+  }
 });
