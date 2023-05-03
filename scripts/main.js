@@ -11,51 +11,89 @@ const buyCart = document.querySelector(".buy-cart"); // TODO: Botón de comprar
 const closeCart = document.querySelector(".close-cart"); // Botón de cerrar carrito
 const totalPrice = document.querySelector(".total-price"); // Etiqueta de precio total
 
+let productList = []; // Declarar la variable con el array de productos (recogidos del archivo de texto)
 let dataArray = []; // Declarar la variable con el array de datos (recogidos de la bd)
 let cart = []; // Declarar variable de carrito
 
-// Función que recuperará el contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
+// Recuperar contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
 document.addEventListener("DOMContentLoaded", () => {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
   showCart();
 });
 
-// Función para vaciar el carrito
+// Evento click: vaciar el carrito
 clearCart.addEventListener("click", () => {
   cart.length = 0;
   showCart();
 });
 
-// Función para obtener datos de productos en formato JSON
-const fetchPromise = fetch("php/get-products-json.php") // Constante que contiene el promise (al ser multihilo, este valor representará si la tarea del hilo ha terminado)
-  .then((res) => res.json())
-  .then((data) => {
-    // Código utilizado con los datos obtenidos
-    // Crear div con producto por cada libro registrado. Si pulsamos el botón del carrito, añadimos el producto al carrito a través de la función "addProduct"
-    data.forEach((book, index) => {
-      proContainer.innerHTML += `
-      <div class="pro">
-        <img src="images/update/products/${book.isbn}.png" alt="">
-        <div class="des">
-            <span>${book.categoryName}</span>
-            <h3>${book.title}</h3>
-            <h5>${book.authorName}</h5>
-            <h4>${book.price} €</h4>
-        </div>
-        <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
-      </div>
-      `;
-    });
-    return data; // Devolver el contenido de data
+// Obtener lista de productos del archivo "indexProducts.txt"
+productLoad = fetch("indexProducts.txt")
+  .then((res) => res.text())
+  .then((dataLoad) => {
+    return dataLoad;
   })
   // Si hay un error, mostrar por consola
   .catch((error) => {
     console.error("Error al obtener los productos: ", error);
   });
 
-// Cuando el hilo de la función fetch termine, agregar el contenido de "data" a la variable "dataArray"
-fetchPromise.then((data) => {
-  dataArray = Object.values(data);
+// Cuando el hilo de la función fetch termine, actualizar el contenido de "productList"
+productLoad.then((dataLoad) => {
+  productList = dataLoad.split(",");
+});
+
+// Función para obtener datos de productos en formato JSON
+const fetchPromise = fetch("php/get-products-json.php") // Constante que contiene el promise (al ser multihilo, este valor representará si la tarea del hilo ha terminado)
+  .then((res) => res.json())
+  .then((dataWrite) => {
+    // Código utilizado con los datos obtenidos
+    // Crear div con producto por cada libro registrado. Si pulsamos el botón del carrito, añadimos el producto al carrito a través de la función "addProduct"
+    // Si estamos en la página de la tienda, mostrar todos los productos
+    if (location.pathname.includes("shop.php")) {
+      dataWrite.forEach((book, index) => {
+        proContainer.innerHTML += `
+        <div class="pro">
+          <img src="images/update/products/${book.isbn}.png" alt="">
+          <div class="des">
+              <span>${book.categoryName}</span>
+              <h3>${book.title}</h3>
+              <h5>${book.authorName}</h5>
+              <h4>${book.price} €</h4>
+          </div>
+          <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        `;
+      });
+      // Si estamos en la página principal, mostrar los productos pasados por el archivo "indexProducts.txt"
+    } else if (location.pathname.includes("index.php")) {
+      dataWrite.forEach((book, index) => {
+        if (productList.includes(book.isbn)) {
+          proContainer.innerHTML += `
+        <div class="pro">
+          <img src="images/update/products/${book.isbn}.png" alt="">
+          <div class="des">
+              <span>${book.categoryName}</span>
+              <h3>${book.title}</h3>
+              <h5>${book.authorName}</h5>
+              <h4>${book.price} €</h4>
+          </div>
+          <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>
+        `;
+        }
+      });
+    }
+    return dataWrite; // Devolver el contenido de dataWrite
+  })
+  // Si hay un error, mostrar por consola
+  .catch((error) => {
+    console.error("Error al obtener los productos: ", error);
+  });
+
+// Cuando el hilo de la función fetch termine, agregar el contenido de "dataWrite" a la variable "dataArray"
+fetchPromise.then((dataWrite) => {
+  dataArray = Object.values(dataWrite);
 });
 
 // Función que añade el producto al carrito
@@ -72,7 +110,6 @@ function addProduct(index) {
   showCart();
 }
 
-// TODO: al hacer click fuera del contenedor de carrito, ocultar modal;
 // Función que actualiza el contenido del carrito, añadiendo los productos seleccionados y permitiendo borrarlos o pasar a la compra de estos
 const showCart = () => {
   cartContainer.innerHTML = ""; // Limpiamos el contenido anterior del contenedor del carrito
@@ -132,13 +169,20 @@ function saveStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Función que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito
+// Evento que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito
 cartButton.addEventListener("click", () => {
   cartModal.style.display = "flex";
   cartModal.style.flexDirection = "column";
 });
 
-// Función para cerrar el carrito
+// Evento click en botón de cerrar carrito: cerrar el carrito
 closeCart.addEventListener("click", () => {
   cartModal.style.display = "none";
+});
+
+// Evento click en botón de comprar (carrito): ir a página de carrito (si hay productos añadidos al carrito)
+buyCart.addEventListener("click", () => {
+  if (cart.length !== 0) {
+    window.location.href = "purchase.php";
+  }
 });

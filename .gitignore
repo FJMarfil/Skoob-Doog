@@ -1,6 +1,4 @@
 # Archivos de mapeo de SCSS
 *.map
 old.*
-Tutorial/
-TODO-Tags.txt
-TODO.txt
+other/
