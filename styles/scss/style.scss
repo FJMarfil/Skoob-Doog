@@ -667,7 +667,7 @@ footer {
 
 /* Sobre nosotros */
 #about-us {
-    p {
+    p:not(:last-child) { // Se aplica a todos los "p" menos al último
         margin-bottom: 50px;
     }
 }
