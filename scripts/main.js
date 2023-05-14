@@ -52,7 +52,9 @@ const fetchPromise = fetch("php/get-products-json.php") // Constante que contien
     // Si estamos en la página de la tienda, mostrar todos los productos
     if (location.pathname.includes("shop.php")) {
       dataWrite.forEach((book, index) => {
-        proContainer.innerHTML += `
+        // Si el artículo tiene stock, lo incluimos
+        if (book.stock > 0) {
+          proContainer.innerHTML += `
         <div class="pro">
           <img src="images/update/products/${book.isbn}.png" alt="">
           <div class="des">
@@ -64,11 +66,13 @@ const fetchPromise = fetch("php/get-products-json.php") // Constante que contien
           <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
         `;
+        }
       });
       // Si estamos en la página principal, mostrar los productos pasados por el archivo "indexProducts.txt"
     } else if (location.pathname.includes("index.php")) {
       dataWrite.forEach((book, index) => {
-        if (productList.includes(book.isbn)) {
+        // Si el libro está indicado en "indexProducts.txt" y tiene stock, lo incluimos
+        if (productList.includes(book.isbn) && book.stock > 0) {
           proContainer.innerHTML += `
         <div class="pro">
           <img src="images/update/products/${book.isbn}.png" alt="">
