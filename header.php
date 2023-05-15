@@ -21,11 +21,6 @@
                                 echo 'class="active"';
                               } ?>>Sobre nosotros</a>
       </li>
-      <li>
-        <a href="contact.html" <?php if (basename($_SERVER['PHP_SELF']) == 'contact.html') {
-                                  echo 'class="active"';
-                                } ?>>Contacto</a>
-      </li>
       <!--Botón de carrito-->
       <li id="lg-bag">
         <i class="far fa-shopping-bag"></i></a>
