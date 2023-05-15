@@ -11,9 +11,11 @@ const buyCart = document.querySelector(".buy-cart"); // TODO: Botón de comprar
 const closeCart = document.querySelector(".close-cart"); // Botón de cerrar carrito
 const totalPrice = document.querySelector(".total-price"); // Etiqueta de precio total
 
-let productList = []; // Declarar la variable con el array de productos (recogidos del archivo de texto)
-let dataArray = []; // Declarar la variable con el array de datos (recogidos de la bd)
-let cart = []; // Declarar variable de carrito
+let stockAnimation = false; // Animación al intentar añadir productos por encima del stock disponible
+
+let productList = []; // Variable con el array de productos (recogidos del archivo de texto)
+let dataArray = []; // Variable con el array de datos (recogidos de la bd)
+let cart = []; // Variable de carrito
 
 // Recuperar contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
 document.addEventListener("DOMContentLoaded", () => {
@@ -62,6 +64,7 @@ const fetchPromise = fetch("php/get-products-json.php") // Constante que contien
               <h3>${book.title}</h3>
               <h5>${book.authorName}</h5>
               <h4>${book.price} €</h4>
+              <span class="stock-number">Unidades disponibles: ${book.stock}</span>
           </div>
           <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
@@ -81,6 +84,7 @@ const fetchPromise = fetch("php/get-products-json.php") // Constante que contien
               <h3>${book.title}</h3>
               <h5>${book.authorName}</h5>
               <h4>${book.price} €</h4>
+              <span class="stock-number">Unidades disponibles: ${book.stock}</span>
           </div>
           <a onclick="(() => addProduct(${index}))()" class="add-to-cart-button"><i class="fal fa-shopping-cart cart"></i></a>
         </div>
@@ -102,21 +106,51 @@ fetchPromise.then((dataWrite) => {
 
 // Función que añade el producto al carrito
 function addProduct(index) {
-  // Verificar si la variable existe
+  // Verificar si el producto existe en el carrito
   const existingProductIndex = cart.findIndex(
     (item) => item.isbn === dataArray[index].isbn
   );
+
+  // Si el producto ya existe en el carrito
   if (existingProductIndex !== -1) {
-    cart[existingProductIndex].quantity++; // Aumentar cantidad del producto en 1
+    // Si la cantidad que se intenta agregar supera el stock disponible, no se añadirá ningún producto al carrito
+    if (dataArray[index].stock <= cart[existingProductIndex].quantity) {
+      // En el caso de la página de la tienda, se añadirá una animación al texto de stock cuando no se pueda añadir más
+      if (location.pathname.includes("shop.php")) {
+        const stockNumber = document.querySelectorAll(".stock-number")[index]; // Span con clase "stock-number" correspondiente al stock
+        const stockOriginalColor = stockNumber.style.color; // Color original del span
+
+        // Verificar si el efecto está desactivado (para no acumular el efecto al hacer muchos clicks)
+        if (!stockAnimation) {
+          // Cambiar el color del span a rojo por 500ms
+          stockNumber.style.color = "red";
+          stockNumber.style.transition = "color 500ms ease-in-out";
+
+          stockAnimation = true; // Establecer la animación como activa
+
+          // Después de 500ms, volver al color original del span
+          setTimeout(() => {
+            stockNumber.style.color = stockOriginalColor;
+            stockNumber.style.transition = "color 500ms ease-in-out";
+
+            stockAnimation = false; // Establecer la animación como inactiva
+          }, 500);
+        }
+      }
+      // En el caso de que no supere el stock, se sumará el producto al carrito
+    } else {
+      cart[existingProductIndex].quantity++; // Aumentar cantidad del producto en 1
+    }
+    // Si el producto no está en el carrito, se añadirá
   } else {
-    cart.push({ ...dataArray[index], quantity: 1 }); // Agregar el nuevo elemento con quantity: 1
+    cart.push({ ...dataArray[index], quantity: 1 }); // Agregar el nuevo producto estableciendo su cantidad en 1
   }
-  showCart();
+  showCart(); // Actualizar carrito
 }
 
 // Función que actualiza el contenido del carrito, añadiendo los productos seleccionados y permitiendo borrarlos o pasar a la compra de estos
 const showCart = () => {
-  cartContainer.innerHTML = ""; // Limpiamos el contenido anterior del contenedor del carrito
+  cartContainer.innerHTML = ""; // Limpiar el contenido anterior del contenedor del carrito
   cart.forEach((book) => {
     const cartItem = document.createElement("div");
     cartItem.classList.add("cart");
@@ -184,7 +218,7 @@ closeCart.addEventListener("click", () => {
   cartModal.style.display = "none";
 });
 
-// Evento click en botón de comprar (carrito): ir a página de carrito (si hay productos añadidos al carrito)
+// Evento click en botón de comprar (carrito): ir a página de compra (si hay productos añadidos al carrito)
 buyCart.addEventListener("click", () => {
   if (cart.length !== 0) {
     window.location.href = "purchase.php";
