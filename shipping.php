@@ -20,6 +20,10 @@
     <!--Header-->
     <?php include "header.php"; ?>
 
+    <section id="page-header">
+        <h2>Envío</h2>
+    </section>
+
     <section id="shipping" class="section-p1">
         <h4>Envío</h4>
         <p>Realizamos envíos a toda España, incluyendo las Islas Canarias, Islas Baleares, Ceuta y Melilla.</p>
