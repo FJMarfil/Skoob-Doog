@@ -20,6 +20,10 @@
   <!--Header-->
   <?php include "header.php"; ?>
 
+  <section id="page-header">
+    <h2>Política de privacidad</h2>
+  </section>
+
   <section id="privacy-polity" class="section-p1">
     <h4>POLÍTICA DE PRIVACIDAD</h4>
     <p>
