@@ -667,9 +667,59 @@ footer {
 
 /* Sobre nosotros */
 #about-us {
-    p:not(:last-child) { // Se aplica a todos los "p" menos al último
+    p:not(:last-child) {
+        // Se aplica a todos los "p" menos al último
         margin-bottom: 50px;
     }
+}
+
+/* Formularios */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Alinear el texto al centro */
+
+    h4 {
+        margin-bottom: 15px;
+
+        &:not(:first-of-type) {
+            margin-top: 30px; /* Agrega un margin-top a todos los h4 excepto al primero */
+        }
+    }
+
+    label {
+        display: flex;
+        justify-content: center; /* Alinear el contenido del label al centro */
+    }
+
+    input {
+        margin-bottom: 10px;
+        width: 250px;
+        border: 1px solid #ccc;
+        padding: 5px;
+        box-sizing: border-box;
+        text-align: center;
+
+        &[type="submit"] {
+            margin-top: 45px;
+        }
+    }
+}
+
+/* Formulario de correo (compra) */
+#purchase-form-email {
+    input {
+        &[type="submit"] {
+            margin-top: 15px;
+        }
+    }
+}
+
+/* Formulario de compra */
+#purchase-form {
+    display: none;
 }
 
 // RESPONSIVE
