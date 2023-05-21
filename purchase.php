@@ -20,15 +20,68 @@
     <!--Header-->
     <?php include "header.php"; ?>
 
-    <!--REVIEW: No hay ofertas actualmente. ¿Se van a implementar?-->
-    <!--Hero-->
-    <section id="hero">
-        <h4>¡Mira nuestro catálogo!</h4>
-        <h2>Super ofertas</h2>
-        <h1>Tus libros preferidos al mejor precio</h1>
-        <p>Ahorra con Skoob Doog</p>
-        <a href="shop.php"><button>Ir a la tienda</button></a>
+    <section id="page-header">
+        <h2>Finalizar Compra</h2>
     </section>
+
+    <section id="purchase-form-email" class="section-p1 form">
+        <!--Correo electrónico-->
+        <h4>Introduce tu correo electrónico</h4>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Continuar">
+    </section>
+
+    <!--Formulario de compra-->
+    <section id="purchase-form" class="section-p1 form">
+        <form action="/procesar_compra" method="POST">
+            <!--Detalles del cliente-->
+            <h4>Introduce tus datos</h4>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="surname">Apellidos</label>
+            <input type="text" id="surname" name="surname" required><br>
+
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="email">Teléfono</label>
+            <input type="number" id="phone" name="phone" required><br>
+
+            <!--Detalles del envío-->
+            <h4>Detalles del envío</h4>
+            <label for="address">Dirección de envío</label>
+            <input type="text" id="address" name="address" required><br>
+
+            <label for="city">Ciudad</label>
+            <input type="text" id="city" name="city" required><br>
+
+            <label for="postal-code">Código postal</label>
+            <input type="text" id="postal-code" name="postal-code" maxlength="5" pattern="[0-9]{5}" required><br>
+
+            <label for="province">Provincia</label>
+            <input type="text" id="province" name="province" required><br>
+
+            <!--Información de pago-->
+            <h4>Información de pago</h4>
+            <label for="card">Número de tarjeta</label>
+            <input type="text" id="Card" name="Card" required><br>
+
+            <label for="expiration-date">Fecha de vencimiento</label>
+            <input type="text" id="expiration-date" name="expiration-date" required><br>
+
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required><br>
+
+            <input type="submit" value="Finalizar Compra">
+        </form>
+    </section>
+
+    <!--Línea de separación-->
+    <hr>
 
     <!--Footer-->
     <?php include "footer.html" ?>
