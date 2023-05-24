@@ -675,11 +675,8 @@ footer {
 
 /* Formularios */
 .form {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; /* Alinear el texto al centro */
+    text-align: center;
 
     h4 {
         margin-bottom: 15px;
@@ -691,16 +688,19 @@ footer {
 
     label {
         display: flex;
-        justify-content: center; /* Alinear el contenido del label al centro */
+        justify-content: center;
     }
 
     input {
+        display: flex;
+        justify-content: center;
         margin-bottom: 10px;
         width: 250px;
         border: 1px solid #ccc;
         padding: 5px;
         box-sizing: border-box;
         text-align: center;
+        margin: 0 auto;
 
         &[type="submit"] {
             margin-top: 45px;
