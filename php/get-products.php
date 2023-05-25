@@ -7,7 +7,6 @@ function getProducts()
 
     // Consulta para obtener datos de la base de datos
     $query = "SELECT book.*, author.author_name, publisher.publisher_name, bookcategory.bookCategory_name FROM book INNER JOIN author ON book.author_id = author.author_id INNER JOIN publisher ON book.publisher_id = publisher.publisher_id INNER JOIN bookcategory ON book.bookCategory_id = bookcategory.bookCategory_id;";
-    
 
     // Ejecutar la consulta
     $result = mysqli_query($conn, $query);
@@ -46,5 +45,15 @@ function getProducts()
     // Devolver array con los datos
     return $products;
 }
+
+// Covertir los datos a un formato JSON, para poder utilizarlo en los archivos JavaScript
+// Obtener datos de la base de datos y almacenarlos en la variable "$products"
+$products = getProducts();
+
+// Convertir el array a una cadena JSON
+$productsJson = json_encode($products);
+
+// Imprimir la cadena JSON
+echo $productsJson;
 
 ?>
