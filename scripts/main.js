@@ -5,6 +5,9 @@ const cartContainer = document.querySelector(".cart-container"); // Contenedor d
 const cartModal = document.getElementById("modalCart"); // Contenedor del modal del carrito
 const cartButton = document.getElementById("lg-bag"); // Botón de carrito
 const cartQuantity = document.getElementById("cart-quantity"); // Etiqueta de cantidad de productos en el botón del carrito
+const purchaseFormEmailButton = document.getElementById(
+  "purchase-form-email-button"
+); // Botón de enviar formulario de correo
 
 const clearCart = document.querySelector(".clear-cart"); // Botón de vaciar carrito
 const buyCart = document.querySelector(".buy-cart"); // TODO: Botón de comprar
@@ -14,7 +17,8 @@ const totalPrice = document.querySelector(".total-price"); // Etiqueta de precio
 let stockAnimation = false; // Animación al intentar añadir productos por encima del stock disponible
 
 let productList = []; // Variable con el array de productos (recogidos del archivo de texto)
-let dataArray = []; // Variable con el array de datos (recogidos de la bd)
+let dataArray = []; // Variable con el array de datos de los productos (recogidos de la bd)
+let dataArrayUser = []; // Variable con el array de datos de usuario (recogidos de la bd)
 let cart = []; // Variable de carrito
 
 // Recuperar contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
@@ -46,7 +50,7 @@ productLoad.then((dataLoad) => {
 });
 
 // Función para obtener datos de productos en formato JSON
-const fetchPromise = fetch("php/get-products-json.php") // Constante que contiene el promise (al ser multihilo, este valor representará si la tarea del hilo ha terminado)
+const fetchPromise = fetch("php/get-products.php") // Constante que contiene el promise (al ser multihilo, este valor representará si la tarea del hilo ha terminado)
   .then((res) => res.json())
   .then((dataWrite) => {
     // Código utilizado con los datos obtenidos
@@ -102,6 +106,24 @@ const fetchPromise = fetch("php/get-products-json.php") // Constante que contien
 // Cuando el hilo de la función fetch termine, agregar el contenido de "dataWrite" a la variable "dataArray"
 fetchPromise.then((dataWrite) => {
   dataArray = Object.values(dataWrite);
+});
+
+// Función para obtener datos de usuarios en formato JSON
+const fetchPromiseUser = fetch("php/get-users.php") // Constante que contiene el promise (al ser multihilo, este valor representará si la tarea del hilo ha terminado)
+  .then((res) => res.json())
+  .then((dataWriteUser) => {
+    // Código utilizado con los datos obtenidos
+
+    return dataWriteUser; // Devolver el contenido de dataWriteUser
+  })
+  // Si hay un error, mostrar por consola
+  .catch((error) => {
+    console.error("Error al obtener los usuarios: ", error);
+  });
+
+// Cuando el hilo de la función fetch termine, agregar el contenido de "dataWriteUser" a la variable "dataArrayUser"
+fetchPromiseUser.then((dataWriteUser) => {
+  dataArrayUser = Object.values(dataWriteUser);
 });
 
 // Función que añade el producto al carrito
@@ -224,3 +246,25 @@ buyCart.addEventListener("click", () => {
     window.location.href = "purchase.php";
   }
 });
+
+if (location.pathname.includes("purchase.php")) {
+  // Evento click en botón de formulario email
+  purchaseFormEmailButton.addEventListener("click", (event) => {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    // Obtener el valor del correo electrónico ingresado
+    let emailInput = document.getElementById("email");
+    let email = emailInput.value.toLowerCase().trim();
+
+    // Verificar si el correo electrónico está en el array de correos permitidos
+    if (dataArrayUser.some((user) => user.email === email)) {
+      // Si el correo existe
+      console.log("EXISTEEEEEEEEEEEE");
+    } else {
+      // Si el correo no existe
+      console.log("NOPE");
+    }
+  });
+}
+
+// TODO: Quitar función de llevar al formulario cuando se hace enter
