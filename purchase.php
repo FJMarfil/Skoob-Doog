@@ -31,7 +31,7 @@
             <label for="email">Correo electrónico</label>
             <input type="email" id="email" name="email" required>
 
-            <input type="submit" id="purchase-form-button" value="Continuar">
+            <input type="button" id="purchase-form-email-button" value="Continuar">
         </form>
     </section>
 
@@ -77,7 +77,7 @@
             <label for="cvv">CVV</label>
             <input type="text" id="cvv" name="cvv" required>
 
-            <input type="submit" value="Finalizar Compra">
+            <input type="button" id="purchase-form-button" value="Finalizar Compra">
         </form>
     </section>
 
