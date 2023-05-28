@@ -34,6 +34,7 @@
             <input type="email" id="email" name="email" required>
 
             <input type="button" id="purchase-form-email-button" value="Continuar">
+            <label for="email" id="email-error">¡Introduce un correo electrónico válido!</label>
         </form>
     </section>
 
@@ -71,13 +72,13 @@
             <!--Información de pago-->
             <h4>Información de pago</h4>
             <label for="card">Número de tarjeta</label>
-            <input type="text" id="card" name="card" required>
+            <input type="tel" id="card" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
 
             <label for="expiration-date">Fecha de vencimiento</label>
-            <input type="text" id="expiration-date" name="expiration-date" required>
+            <input type="date" id="expiration-date" name="expiration-date" required>
 
             <label for="cvv">CVV</label>
-            <input type="text" id="cvv" name="cvv" required>
+            <input type="number" id="cvv" class="required" min="0" max="999" pattern="([0-9]|[0-9]|[0-9])" name="cvv" placeholder="000" required>
 
             <input type="button" id="purchase-form-button" value="Finalizar Compra">
         </form>
