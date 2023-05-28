@@ -5,9 +5,22 @@ const cartContainer = document.querySelector(".cart-container"); // Contenedor d
 const cartModal = document.getElementById("modalCart"); // Contenedor del modal del carrito
 const cartButton = document.getElementById("lg-bag"); // Botón de carrito
 const cartQuantity = document.getElementById("cart-quantity"); // Etiqueta de cantidad de productos en el botón del carrito
+const purchaseFormEmail = document.getElementById("purchase-form-email"); // Formulario de correo electrónico
+const purchaseForm = document.getElementById("purchase-form"); // Formulario de compra
 const purchaseFormEmailButton = document.getElementById(
   "purchase-form-email-button"
 ); // Botón de enviar formulario de correo
+const purchaseFormButton = document.getElementById("purchase-form-button"); // Botón de enviar formulario de compra
+
+const namef = document.getElementById("name"); // Input de nombre (formulario)
+const surname = document.getElementById("surname"); // Input de apellidos (formulario)
+const email = document.getElementById("email"); // Input de correo (formulario)
+const email2 = document.getElementById("email2"); // Input de correo 2 (formulario)
+const phone = document.getElementById("phone"); // Input de teléfono (formulario)
+const address = document.getElementById("address"); // Input de dirección (formulario)
+const city = document.getElementById("city"); // Input de ciudad (formulario)
+const postalCode = document.getElementById("postal-code"); // Input de código postal (formulario)
+const province = document.getElementById("province"); // Input de provincia (formulario)
 
 const clearCart = document.querySelector(".clear-cart"); // Botón de vaciar carrito
 const buyCart = document.querySelector(".buy-cart"); // TODO: Botón de comprar
@@ -19,6 +32,7 @@ let stockAnimation = false; // Animación al intentar añadir productos por enci
 let productList = []; // Variable con el array de productos (recogidos del archivo de texto)
 let dataArray = []; // Variable con el array de datos de los productos (recogidos de la bd)
 let dataArrayUser = []; // Variable con el array de datos de usuario (recogidos de la bd)
+let dataArrayUserByEmail = []; // Variable con el array de datos de un solo usuario, obtenido desde su correo electrónico
 let cart = []; // Variable de carrito
 
 // Recuperar contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
@@ -247,24 +261,46 @@ buyCart.addEventListener("click", () => {
   }
 });
 
+// Si la página actual es la de pago
 if (location.pathname.includes("purchase.php")) {
   // Evento click en botón de formulario email
   purchaseFormEmailButton.addEventListener("click", (event) => {
-    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
 
-    // Obtener el valor del correo electrónico ingresado
-    let emailInput = document.getElementById("email");
-    let email = emailInput.value.toLowerCase().trim();
+    purchaseFormEmail.style.display = "none"; // Ocultar formulario de email
+    purchaseForm.style.display = "flex"; // Mostrar formulario compra
 
-    // Verificar si el correo electrónico está en el array de correos permitidos
-    if (dataArrayUser.some((user) => user.email === email)) {
-      // Si el correo existe
-      console.log("EXISTEEEEEEEEEEEE");
+    // Obtener el valor del correo electrónico ingresado (convierte el input en minúsculas y le elimina los espacios en blanco antes y después del texto)
+    let emailValue = email.value.toLowerCase().trim();
+
+    // Verificar si el correo electrónico ya está registrado
+    if (dataArrayUser.some((user) => user.email === emailValue)) {
+      // Si el correo existe, imprimir todos los campos
+
+      // Obtener datos del usuario según su correo electrónico
+      let dataArrayUserByEmail = dataArrayUser.find(
+        (user) => user.email === emailValue
+      );
+
+      // Datos de usuario
+      namef.value = dataArrayUserByEmail.name; // Nombre
+      surname.value = dataArrayUserByEmail.surname; // Apellidos
+      email2.value = dataArrayUserByEmail.email; // Email
+      phone.value = dataArrayUserByEmail.phone; // Teléfono
+      address.value = dataArrayUserByEmail.address; // Dirección
+      city.value = dataArrayUserByEmail.city; // Ciudad
+      postalCode.value = dataArrayUserByEmail.postalCode; // Código postal
+      province.value = dataArrayUserByEmail.province; // Provincia
     } else {
-      // Si el correo no existe
-      console.log("NOPE");
+      // Si el correo no existe, imprimir correo electrónico
+      email2.value = email.value; // Completar el segundo formulario con el correo electrónico escrito previamente
     }
   });
-}
 
-// TODO: Quitar función de llevar al formulario cuando se hace enter
+  // Evento de escucha para la tecla "Enter" presionada en el campo de correo electrónico
+  purchaseFormEmail.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
+
+    purchaseFormEmailButton.click(); // Realizar un evento de click en el botón "Continuar"
+  });
+}
