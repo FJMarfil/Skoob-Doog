@@ -678,11 +678,15 @@ footer {
     flex-direction: column;
     text-align: center;
 
+    input[type="button"]:hover {
+        cursor: pointer; // Al pasar el cursor por botón de formulario, cambiar puntero
+    }
+
     h4 {
         margin-bottom: 15px;
 
         &:not(:first-of-type) {
-            margin-top: 30px; /* Agrega un margin-top a todos los h4 excepto al primero */
+            margin-top: 30px; // Agrega un margin-top a todos los h4 excepto al primero
         }
     }
 
