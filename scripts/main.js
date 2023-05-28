@@ -10,6 +10,7 @@ const purchaseForm = document.getElementById("purchase-form"); // Formulario de 
 const purchaseFormEmailButton = document.getElementById(
   "purchase-form-email-button"
 ); // Botón de enviar formulario de correo
+const emailError = document.getElementById("email-error"); // Etiqueta de error en el correo
 const purchaseFormButton = document.getElementById("purchase-form-button"); // Botón de enviar formulario de compra
 
 const namef = document.getElementById("name"); // Input de nombre (formulario)
@@ -267,33 +268,43 @@ if (location.pathname.includes("purchase.php")) {
   purchaseFormEmailButton.addEventListener("click", (event) => {
     event.preventDefault(); // Evitar que el formulario se envíe automáticamente
 
-    purchaseFormEmail.style.display = "none"; // Ocultar formulario de email
-    purchaseForm.style.display = "flex"; // Mostrar formulario compra
-
     // Obtener el valor del correo electrónico ingresado (convierte el input en minúsculas y le elimina los espacios en blanco antes y después del texto)
     let emailValue = email.value.toLowerCase().trim();
 
-    // Verificar si el correo electrónico ya está registrado
-    if (dataArrayUser.some((user) => user.email === emailValue)) {
-      // Si el correo existe, imprimir todos los campos
+    // Comprobar si el formato del correo introducido es el correcto
+    if (
+      /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
+        emailValue
+      )
+    ) {
+      purchaseFormEmail.style.display = "none"; // Ocultar formulario de email
+      purchaseForm.style.display = "flex"; // Mostrar formulario compra
 
-      // Obtener datos del usuario según su correo electrónico
-      let dataArrayUserByEmail = dataArrayUser.find(
-        (user) => user.email === emailValue
-      );
+      // Verificar si el correo electrónico ya está registrado
+      if (dataArrayUser.some((user) => user.email === emailValue)) {
+        // Si el correo existe, imprimir todos los campos
 
-      // Datos de usuario
-      namef.value = dataArrayUserByEmail.name; // Nombre
-      surname.value = dataArrayUserByEmail.surname; // Apellidos
-      email2.value = dataArrayUserByEmail.email; // Email
-      phone.value = dataArrayUserByEmail.phone; // Teléfono
-      address.value = dataArrayUserByEmail.address; // Dirección
-      city.value = dataArrayUserByEmail.city; // Ciudad
-      postalCode.value = dataArrayUserByEmail.postalCode; // Código postal
-      province.value = dataArrayUserByEmail.province; // Provincia
+        // Obtener datos del usuario según su correo electrónico
+        let dataArrayUserByEmail = dataArrayUser.find(
+          (user) => user.email === emailValue
+        );
+
+        // Datos de usuario
+        namef.value = dataArrayUserByEmail.name; // Nombre
+        surname.value = dataArrayUserByEmail.surname; // Apellidos
+        email2.value = dataArrayUserByEmail.email; // Email
+        phone.value = dataArrayUserByEmail.phone; // Teléfono
+        address.value = dataArrayUserByEmail.address; // Dirección
+        city.value = dataArrayUserByEmail.city; // Ciudad
+        postalCode.value = dataArrayUserByEmail.postalCode; // Código postal
+        province.value = dataArrayUserByEmail.province; // Provincia
+      } else {
+        // Si el correo no existe, imprimir correo electrónico
+        email2.value = email.value; // Completar el segundo formulario con el correo electrónico escrito previamente
+      }
+      // Si el formato del correo es incorrecto, mostrar error
     } else {
-      // Si el correo no existe, imprimir correo electrónico
-      email2.value = email.value; // Completar el segundo formulario con el correo electrónico escrito previamente
+      emailError.style.display = "flex"; // Mostrar etiqueta de error en el correo
     }
   });
 
