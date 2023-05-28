@@ -24,8 +24,10 @@
         <h2>Finalizar Compra</h2>
     </section>
 
+    <!--Formulario de email-->
     <section id="purchase-form-email" class="section-p1 form">
-        <form action="/process-purchase-email" method="POST">
+        <!--TODO: Quitar action o cambiarlo-->
+        <form action="" method="POST" target="hiddenFrame">
             <!--Correo electrónico-->
             <h4>Introduce tu correo electrónico</h4>
             <label for="email">Correo electrónico</label>
@@ -37,7 +39,7 @@
 
     <!--Formulario de compra-->
     <section id="purchase-form" class="section-p1 form">
-        <form action="/process-purchase" method="POST">
+        <form action="" method="POST">
             <!--Detalles del cliente-->
             <h4>Introduce tus datos</h4>
             <label for="name">Nombre</label>
@@ -46,10 +48,10 @@
             <label for="surname">Apellidos</label>
             <input type="text" id="surname" name="surname" required>
 
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email2">Correo electrónico</label>
+            <input type="email" id="email2" name="email2" required>
 
-            <label for="email">Teléfono</label>
+            <label for="phone">Teléfono</label>
             <input type="number" id="phone" name="phone" required>
 
             <!--Detalles del envío-->
@@ -69,7 +71,7 @@
             <!--Información de pago-->
             <h4>Información de pago</h4>
             <label for="card">Número de tarjeta</label>
-            <input type="text" id="Card" name="Card" required>
+            <input type="text" id="card" name="card" required>
 
             <label for="expiration-date">Fecha de vencimiento</label>
             <input type="text" id="expiration-date" name="expiration-date" required>
@@ -95,6 +97,9 @@
 
     <!--Script del del carrito (móvil)-->
     <script src="scripts/mobile.js"></script>
+
+    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+
 </body>
 
 </html>
