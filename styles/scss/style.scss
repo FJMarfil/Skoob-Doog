@@ -678,7 +678,7 @@ footer {
     flex-direction: column;
     text-align: center;
 
-    input[type="button"]:hover {
+    input[type="submit"]:hover {
         cursor: pointer; // Al pasar el cursor por botón de formulario, cambiar puntero
     }
 
@@ -706,7 +706,7 @@ footer {
         text-align: center;
         margin: 0 auto;
 
-        &[type="button"] {
+        &[type="submit"] {
             margin-top: 45px;
         }
     }
@@ -715,7 +715,7 @@ footer {
 /* Formulario de correo (compra) */
 #purchase-form-email {
     input {
-        &[type="button"] {
+        &[type="submit"] {
             margin-top: 15px;
         }
     }
