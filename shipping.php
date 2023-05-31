@@ -26,11 +26,11 @@
 
     <section id="shipping" class="section-p1">
         <h4>Envío</h4>
+        <p>Los costes de envío son de 4 euros.</p>
         <p>Realizamos envíos a toda España, incluyendo las Islas Canarias, Islas Baleares, Ceuta y Melilla.</p>
-        <p>El tiempo de entrega varía según el destino y el método de envío que elijas. En España peninsular, el tiempo de entrega estándar es de 1 a 3 días hábiles. Los envíos a las Islas Canarias, Islas Baleares, Ceuta y Melilla pueden demorarse hasta 5 días laborables.</p>
-        <p>Para realizar un seguimiento de tu pedido, clic en "Seguir mi pedido". Desde ahí, introduce tu correo electrónico y el número de orden para recibir la información del envío.</p>
+        <p>El tiempo de entrega varía según el destino. En España peninsular, el tiempo de entrega estándar es de 1 a 3 días hábiles. Los envíos a las Islas Canarias, Islas Baleares, Ceuta y Melilla, pueden demorarse hasta 5 días laborables.</p>
+        <p>Para realizar un seguimiento de tu pedido, haz clic en "Seguir mi pedido". Desde ahí, introduce tu correo electrónico y el número de orden para recibir la información del envío.</p>
     </section>
-
 
     <!--Línea de separación-->
     <hr>
