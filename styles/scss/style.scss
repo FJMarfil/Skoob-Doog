@@ -684,6 +684,7 @@ footer {
 
     h4 {
         margin-bottom: 15px;
+        font-size: 22px;
 
         &:not(:first-of-type) {
             margin-top: 30px; // Agrega un margin-top a todos los h4 excepto al primero
@@ -693,6 +694,7 @@ footer {
     label {
         display: flex;
         justify-content: center;
+        font-size: 20px;
     }
 
     input {
@@ -705,9 +707,24 @@ footer {
         box-sizing: border-box;
         text-align: center;
         margin: 0 auto;
+        font-size: 16px;
 
         &[type="submit"] {
             margin-top: 45px;
+
+            background-color: #821818;
+            border: 1px solid #ddd;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+
+            &:hover {
+                background-color: #222;
+            }
         }
     }
 }
@@ -728,6 +745,13 @@ footer {
 /* Formulario de compra */
 #purchase-form {
     display: none;
+}
+
+#total-price-span {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    font-size: 20px;
 }
 
 // RESPONSIVE
