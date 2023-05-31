@@ -24,7 +24,7 @@ const postalCode = document.getElementById("postal-code"); // Input de código p
 const province = document.getElementById("province"); // Input de provincia (formulario)
 
 const clearCart = document.querySelector(".clear-cart"); // Botón de vaciar carrito
-const buyCart = document.querySelector(".buy-cart"); // TODO: Botón de comprar
+const buyCart = document.querySelector(".buy-cart"); // Botón de comprar carrito
 const closeCart = document.querySelector(".close-cart"); // Botón de cerrar carrito
 const totalPrice = document.querySelector(".total-price"); // Etiqueta de precio total
 
@@ -262,9 +262,11 @@ buyCart.addEventListener("click", () => {
   }
 });
 
+// ------------------------------------------------------------------------------------------------
+
 // Si la página actual es la de pago
 if (location.pathname.includes("purchase.php")) {
-  // Evento click en botón de formulario email
+  // Evento click en botón de formulario de correo
   purchaseFormEmailButton.addEventListener("click", (event) => {
     event.preventDefault(); // Evitar que el formulario se envíe automáticamente
 
@@ -314,4 +316,23 @@ if (location.pathname.includes("purchase.php")) {
 
     purchaseFormEmailButton.click(); // Realizar un evento de click en el botón "Continuar"
   });
+
+  /*
+  // Evento click en botón de formulario de compra
+  purchaseFormButton.addEventListener("click", (event) => {
+    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+    // Obtener el valor del correo electrónico ingresado (convierte el input en minúsculas y le elimina los espacios en blanco antes y después del texto)
+    let emailValue = email.value.toLowerCase().trim();
+
+    // Comprobar si el formato del correo introducido es el correcto
+    if (
+      /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
+        emailValue
+      )
+    ) {
+      // AQUÍ ES DONDE ACTUALIZARÉ LOS DATOS
+    }
+  });
+  */
 }
