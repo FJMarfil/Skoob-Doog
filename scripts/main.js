@@ -22,6 +22,9 @@ const address = document.getElementById("address"); // Input de dirección (form
 const city = document.getElementById("city"); // Input de ciudad (formulario)
 const postalCode = document.getElementById("postal-code"); // Input de código postal (formulario)
 const province = document.getElementById("province"); // Input de provincia (formulario)
+const totalPriceSpan = document.getElementById("total-price-span"); // span de precio total (formulario)
+
+console;
 
 const clearCart = document.querySelector(".clear-cart"); // Botón de vaciar carrito
 const buyCart = document.querySelector(".buy-cart"); // Botón de comprar carrito
@@ -282,7 +285,9 @@ if (location.pathname.includes("purchase.php")) {
       )
     ) {
       purchaseFormEmail.style.display = "none"; // Ocultar formulario de email
-      purchaseForm.style.display = "flex"; // Mostrar formulario compra
+      purchaseForm.style.display = "flex"; // Mostrar formulario de compra
+
+      totalPriceSpan.textContent = totalPrice.textContent; // Añadir precio total al formulario de compra
 
       // Verificar si el correo electrónico ya está registrado
       if (dataArrayUser.some((user) => user.email === emailValue)) {
