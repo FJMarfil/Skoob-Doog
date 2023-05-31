@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Francisco Jesús Marfil Vargas" />
 
-    <title>Página de compra - Skoob Doog</title>
+    <title>Finalizar compra - Skoob Doog</title>
 
     <!--Importar la librería font-awesome (contiene fuentes e iconos que se utilizarán en la web)-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
@@ -99,7 +99,7 @@
     <!--Script del del carrito (móvil)-->
     <script src="scripts/mobile.js"></script>
 
-    <!--// REVIEW: Se va a utilizar?-->
+    <!--// REVIEW: ¿Se va a utilizar?-->
     <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 
 </body>
