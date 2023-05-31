@@ -27,20 +27,20 @@
     <!--Formulario de email-->
     <section id="purchase-form-email" class="section-p1 form">
         <!--TODO: Quitar action o cambiarlo-->
-        <form action="" method="POST" target="hiddenFrame">
+        <form action="" method="POST">
             <!--Correo electrónico-->
             <h4>Introduce tu correo electrónico</h4>
             <label for="email">Correo electrónico</label>
             <input type="email" id="email" name="email" required>
 
-            <input type="button" id="purchase-form-email-button" value="Continuar">
+            <input type="submit" id="purchase-form-email-button" value="Continuar">
             <label for="email" id="email-error">¡Introduce un correo electrónico válido!</label>
         </form>
     </section>
 
     <!--Formulario de compra-->
     <section id="purchase-form" class="section-p1 form">
-        <form action="" method="POST">
+        <form action="php/update-user.php" method="POST">
             <!--Detalles del cliente-->
             <h4>Introduce tus datos</h4>
             <label for="name">Nombre</label>
@@ -53,7 +53,7 @@
             <input type="email" id="email2" name="email2" required>
 
             <label for="phone">Teléfono</label>
-            <input type="number" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" required>
 
             <!--Detalles del envío-->
             <h4>Detalles del envío</h4>
@@ -72,15 +72,15 @@
             <!--Información de pago-->
             <h4>Información de pago</h4>
             <label for="card">Número de tarjeta</label>
-            <input type="tel" id="card" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+            <input type="tel" id="card" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
 
             <label for="expiration-date">Fecha de vencimiento</label>
             <input type="date" id="expiration-date" name="expiration-date" required>
 
             <label for="cvv">CVV</label>
-            <input type="number" id="cvv" class="required" min="0" max="999" pattern="([0-9]|[0-9]|[0-9])" name="cvv" placeholder="000" required>
+            <input type="tel" id="cvv" name="cvv" min="0" max="999" pattern="[0-9]{3}}" placeholder="000" required>
 
-            <input type="button" id="purchase-form-button" value="Finalizar Compra">
+            <input type="submit" id="purchase-form-button" value="Finalizar Compra">
         </form>
     </section>
 
@@ -99,6 +99,7 @@
     <!--Script del del carrito (móvil)-->
     <script src="scripts/mobile.js"></script>
 
+    <!--// REVIEW: Se va a utilizar?-->
     <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
 
 </body>
