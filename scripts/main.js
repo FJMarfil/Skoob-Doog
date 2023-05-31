@@ -220,10 +220,12 @@ const showCart = () => {
   cartQuantity.textContent = totalQuantity; // Añadir número de productos a la etiqueta del carrito
 
   // Suma del precio total de los artículos
-  totalPrice.textContent =
-    "Total: " +
-    cart.reduce((acc, book) => acc + book.quantity * book.price, 0).toFixed(2) +
-    " €"; // Límite de dos decimales para evitar errores y concatenación de símbolo de euro
+  let currentTotal = cart.reduce(
+    (acc, book) => acc + book.quantity * book.price,
+    0
+  ); // Obtener el valor actual
+  let newTotal = (currentTotal + 4).toFixed(2); // Sumar 4 (gastos de envío) y formatear a dos decimales
+  totalPrice.textContent = "Total: " + newTotal + " €"; // Asignar la cadena de texto a totalPrice
 
   saveStorage(); // Pasar datos del carrito al almacenamiento local a través de la función saveStorage
 };
