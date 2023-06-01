@@ -25,7 +25,7 @@ const postalCode = document.getElementById("postal-code"); // Input de código p
 const province = document.getElementById("province"); // Input de provincia (formulario)
 const totalPriceSpan = document.getElementById("total-price-span"); // span de precio total (formulario)
 
-console;
+const homeButton = document.getElementById("home-button"); // Botón de volver a inicio
 
 const clearCart = document.querySelector(".clear-cart"); // Botón de vaciar carrito
 const buyCart = document.querySelector(".buy-cart"); // Botón de comprar carrito
@@ -332,6 +332,7 @@ if (location.pathname.includes("purchase.php")) {
     purchaseFormEmailButton.click(); // Realizar un evento de click en el botón "Continuar"
   });
 
+  // REVIEW: Eliminar código comentado
   /*
   // Evento click en botón de formulario de compra
   purchaseFormButton.addEventListener("click", (event) => {
@@ -350,4 +351,12 @@ if (location.pathname.includes("purchase.php")) {
     }
   });
   */
+}
+
+// Si la página actual es la de confirmación de pedido
+if (location.pathname.includes("confirmation.php")) {
+  // Evento de click al botón de volver a inicio
+  homeButton.addEventListener("click", () => {
+    window.location.href = "index.php";
+  });
 }
