@@ -12,6 +12,7 @@ const purchaseFormEmailButton = document.getElementById(
 ); // Botón de enviar formulario de correo
 const emailError = document.getElementById("email-error"); // Etiqueta de error en el correo
 const purchaseFormButton = document.getElementById("purchase-form-button"); // Botón de enviar formulario de compra
+const orderPrice = document.getElementById("order-price"); // Precio total (oculto en el formulario)
 
 const namef = document.getElementById("name"); // Input de nombre (formulario)
 const surname = document.getElementById("surname"); // Input de apellidos (formulario)
@@ -288,6 +289,13 @@ if (location.pathname.includes("purchase.php")) {
       purchaseForm.style.display = "flex"; // Mostrar formulario de compra
 
       totalPriceSpan.textContent = totalPrice.textContent; // Añadir precio total al formulario de compra
+
+      // Obtener el valor numérico de la cadena de texto del precio
+      const orderPrice = parseFloat(
+        totalPrice.textContent.replace("Total: ", "").replace(" €", "")
+      );
+
+      document.getElementById("order-price").value = orderPrice; // Asignar el valor al campo oculto en el formulario
 
       // Verificar si el correo electrónico ya está registrado
       if (dataArrayUser.some((user) => user.email === emailValue)) {
