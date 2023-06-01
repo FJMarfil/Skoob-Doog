@@ -80,6 +80,9 @@
             <label for="cvv">CVV</label>
             <input type="tel" id="cvv" name="cvv" min="0" max="999" pattern="[0-9]{3}}" placeholder="000" required>
 
+            <span id="total-price-span"></span>
+            <input type="hidden" id="order-price" name="order-price" value="">
+
             <input type="submit" id="purchase-form-button" value="Finalizar Compra">
         </form>
     </section>
