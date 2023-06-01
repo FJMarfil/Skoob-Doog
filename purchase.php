@@ -40,7 +40,7 @@
 
     <!--Formulario de compra-->
     <section id="purchase-form" class="section-p1 form">
-        <form action="php/update-user.php" method="POST">
+        <form action="php/make-order.php" method="POST">
             <!--Detalles del cliente-->
             <h4>Introduce tus datos</h4>
             <label for="name">Nombre</label>
@@ -78,7 +78,7 @@
             <input type="date" id="expiration-date" name="expiration-date" required>
 
             <label for="cvv">CVV</label>
-            <input type="tel" id="cvv" name="cvv" min="0" max="999" pattern="[0-9]{3}}" placeholder="000" required>
+            <input type="tel" id="cvv" name="cvv" min="0" max="999" pattern="[0-9]{3}" placeholder="000" required>
 
             <span id="total-price-span"></span>
             <input type="hidden" id="order-price" name="order-price" value="">
