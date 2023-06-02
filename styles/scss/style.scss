@@ -42,9 +42,8 @@ p {
     margin: 15px 0 20px 0;
 }
 
-/* TODO: cambiar nombre a la clase */
 /* Botón de banner */
-button.normal {
+button.banner-button {
     font-size: 14px;
     font-weight: 600;
     padding: 15px 30px;
@@ -55,19 +54,6 @@ button.normal {
     border: none;
     outline: none;
     transition: 0.2s;
-}
-
-/* WARNING: no se usa */
-button.white {
-    background: transparent;
-    padding: 11px 18px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #fff;
-    outline: none;
-    border: 1px solid #fff;
-    cursor: pointer;
-    transition: 0.1s ease;
 }
 
 /* Sección con padding añadido */
@@ -434,7 +420,6 @@ header {
     }
 }
 
-// TODO: Cambiar estilo de los productos en la tienda
 /* Productos */
 #product1 {
     text-align: center;
