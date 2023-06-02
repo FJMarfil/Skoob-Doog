@@ -268,8 +268,6 @@ buyCart.addEventListener("click", () => {
   }
 });
 
-// ------------------------------------------------------------------------------------------------
-
 // Si la página actual es la de pago
 if (location.pathname.includes("purchase.php")) {
   // Evento click en botón de formulario de correo
@@ -299,8 +297,6 @@ if (location.pathname.includes("purchase.php")) {
 
       // Verificar si el correo electrónico ya está registrado
       if (dataArrayUser.some((user) => user.email === emailValue)) {
-        // Si el correo existe, imprimir todos los campos
-
         // Obtener datos del usuario según su correo electrónico
         let dataArrayUserByEmail = dataArrayUser.find(
           (user) => user.email === emailValue
@@ -331,32 +327,16 @@ if (location.pathname.includes("purchase.php")) {
 
     purchaseFormEmailButton.click(); // Realizar un evento de click en el botón "Continuar"
   });
-
-  // REVIEW: Eliminar código comentado
-  /*
-  // Evento click en botón de formulario de compra
-  purchaseFormButton.addEventListener("click", (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
-
-    // Obtener el valor del correo electrónico ingresado (convierte el input en minúsculas y le elimina los espacios en blanco antes y después del texto)
-    let emailValue = email.value.toLowerCase().trim();
-
-    // Comprobar si el formato del correo introducido es el correcto
-    if (
-      /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
-        emailValue
-      )
-    ) {
-      // AQUÍ ES DONDE ACTUALIZARÉ LOS DATOS
-    }
-  });
-  */
 }
 
 // Si la página actual es la de confirmación de pedido
 if (location.pathname.includes("confirmation.php")) {
+  // Vaciar el carrito
+  cart.length = 0;
+  showCart();
+
   // Evento de click al botón de volver a inicio
   homeButton.addEventListener("click", () => {
-    window.location.href = "index.php";
+    window.location.href = "index.php"; // Llevar a la página principal
   });
 }
