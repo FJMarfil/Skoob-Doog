@@ -11,8 +11,6 @@ const purchaseFormEmailButton = document.getElementById(
   "purchase-form-email-button"
 ); // Botón de enviar formulario de correo
 const emailError = document.getElementById("email-error"); // Etiqueta de error en el correo
-const purchaseFormButton = document.getElementById("purchase-form-button"); // Botón de enviar formulario de compra
-const orderPrice = document.getElementById("order-price"); // Precio total (oculto en el formulario)
 
 const namef = document.getElementById("name"); // Input de nombre (formulario)
 const surname = document.getElementById("surname"); // Input de apellidos (formulario)
@@ -37,7 +35,6 @@ let stockAnimation = false; // Animación al intentar añadir productos por enci
 let productList = []; // Variable con el array de productos (recogidos del archivo de texto)
 let dataArray = []; // Variable con el array de datos de los productos (recogidos de la bd)
 let dataArrayUser = []; // Variable con el array de datos de usuario (recogidos de la bd)
-let dataArrayUserByEmail = []; // Variable con el array de datos de un solo usuario, obtenido desde su correo electrónico
 let cart = []; // Variable de carrito
 
 // Recuperar contenido del carrito almacenado en el almacenamiento local, una vez cargue la página
@@ -53,7 +50,7 @@ clearCart.addEventListener("click", () => {
 });
 
 // Obtener lista de productos del archivo "indexProducts.txt"
-productLoad = fetch("indexProducts.txt")
+let productLoad = fetch("indexProducts.txt")
   .then((res) => res.text())
   .then((dataLoad) => {
     return dataLoad;
