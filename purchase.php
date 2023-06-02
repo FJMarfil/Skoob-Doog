@@ -2,18 +2,18 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Francisco Jesús Marfil Vargas" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Francisco Jesús Marfil Vargas">
 
     <title>Finalizar compra - Skoob Doog</title>
 
     <!--Importar la librería font-awesome (contiene fuentes e iconos que se utilizarán en la web)-->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
     <!--Importar la hoja de estilos-->
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -71,13 +71,13 @@
             <!--Información de pago-->
             <h4>Información de pago</h4>
             <label for="card">Número de tarjeta</label>
-            <input type="tel" id="card" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+            <input type="tel" id="card" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
 
             <label for="expiration-date">Fecha de vencimiento</label>
             <input type="date" id="expiration-date" name="expiration-date" required>
 
             <label for="cvv">CVV</label>
-            <input type="tel" id="cvv" name="cvv" min="0" max="999" pattern="[0-9]{3}" placeholder="000" required>
+            <input type="tel" id="cvv" name="cvv" pattern="[0-9]{3}" placeholder="000" required>
 
             <span id="total-price-span"></span>
             <input type="hidden" id="order-price" name="order-price" value="">
