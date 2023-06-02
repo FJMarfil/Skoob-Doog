@@ -1,6 +1,6 @@
 <header>
   <!--Logo de la tienda-->
-  <a href="index.php"><img src="images/logo.png" class="logo" alt="" /></a>
+  <a href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
 
   <!--Barra de navegación-->
   <div>
@@ -23,7 +23,7 @@
       </li>
       <!--Botón de carrito-->
       <li id="lg-bag">
-        <i class="far fa-shopping-bag"></i></a>
+        <i class="far fa-shopping-bag"></i>
         <i id="cart-quantity"></i>
       </li>
     </ul>
