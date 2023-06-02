@@ -70,7 +70,7 @@ $orderResult = mysqli_query($conn, $orderQuery); // Ejecutar la consulta de la c
 
 // Comprobar si hay algún error en la consulta
 if (!$orderResult) {
-    echo "Error en la consulta de la compra: " . mysqli_errno($conn);
+    echo "Error en la compra: " . mysqli_errno($conn);
     exit();
 }
 
@@ -89,11 +89,3 @@ if (mysqli_affected_rows($conn) > 0) {
 }
 
 ?>
-
-// TODO: AÑADIR LIBROS A TABLA CONTAIN
-
-// TODO: ENVIAR POR CORREO LA INFORMACIÓN DEL PEDIDO
-
-// TODO: REDUCIR CANTIDAD DE PRODUCTOS DEL STOCK SEGÚN LA COMPRA
-
-// TODO: VACIAR CARRITO
