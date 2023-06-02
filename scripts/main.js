@@ -250,7 +250,7 @@ function saveStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Evento que abre la ventana modal del carrito cuando se le hace click al icono de carrito. Esto lo hace al cambiar la clase "modal-hidden" a "modal-visible", las cuales están configuradas en el archivo css para ocultar y mostrar el carrito
+// Evento que abre la ventana modal del carrito cuando se le hace click al icono de carrito
 cartButton.addEventListener("click", () => {
   cartModal.style.display = "flex";
   cartModal.style.flexDirection = "column";
