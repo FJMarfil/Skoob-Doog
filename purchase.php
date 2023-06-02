@@ -26,8 +26,7 @@
 
     <!--Formulario de email-->
     <section id="purchase-form-email" class="section-p1 form">
-        <!--TODO: Quitar action o cambiarlo-->
-        <form action="" method="POST">
+        <form>
             <!--Correo electrónico-->
             <h4>Introduce tu correo electrónico</h4>
             <label for="email">Correo electrónico</label>
@@ -101,10 +100,6 @@
 
     <!--Script del del carrito (móvil)-->
     <script src="scripts/mobile.js"></script>
-
-    <!--// REVIEW: ¿Se va a utilizar?-->
-    <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
-
 </body>
 
 </html>
