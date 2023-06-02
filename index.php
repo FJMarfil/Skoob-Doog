@@ -20,7 +20,6 @@
   <!--Header-->
   <?php include "header.php"; ?>
 
-  <!--REVIEW: No hay ofertas actualmente. ¿Se van a implementar?-->
   <!--Hero-->
   <section id="hero">
     <h4>¡Mira nuestro catálogo!</h4>
@@ -58,7 +57,7 @@
   <section id="product1" class="section-p1">
     <h2>Te recomendamos</h2>
     <p>Nuestra propia selección</p>
-    
+
     <div class="pro-container"></div>
   </section>
 
@@ -66,7 +65,7 @@
   <section id="banner" class="section-m1">
     <h4>Los mejores libros</h4>
     <h2>Descuentos de hasta el <span>50%</span> - En selección de libros</h2>
-    <a href="shop.php"><button class="normal">Descúbrelos</button></a>
+    <a href="shop.php"><button class="banner-button">Descúbrelos</button></a>
   </section>
 
   <!--Footer-->
