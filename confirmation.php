@@ -32,7 +32,6 @@ $orderReference = $_GET['order'];
 
     <section id="confirmation" class="section-p1">
         <h4>¡La compra se ha realizado con éxito!</h4>
-        <p>Para comprobar el estado de tu pedido, dirígete al enlace de "Seguir mi pedido" y escribe el correo con el que has realizado dicho pedido y el número de referencia.</p>
         <p>Número de referencia del pedido: <?php echo $orderReference ?></p>
 
         <button id="home-button">Volver a inicio</button>
