@@ -2,18 +2,18 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Francisco Jesús Marfil Vargas" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Francisco Jesús Marfil Vargas">
 
   <title>Skoob Doog</title>
 
   <!--Importar la librería font-awesome (contiene fuentes e iconos que se utilizarán en la web)-->
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
 
   <!--Importar la hoja de estilos-->
-  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -32,23 +32,23 @@
   <!--Características-->
   <section id="feature" class="section-p1">
     <div class="fe-box">
-      <img src="images/update/features/fast-delivery.png" alt="" />
+      <img src="images/update/features/fast-delivery.png" alt="">
       <h6>Envíos rápidos</h6>
     </div>
     <div class="fe-box">
-      <img src="images/update/features/best-prices.png" alt="" />
+      <img src="images/update/features/best-prices.png" alt="">
       <h6>Mejores precios</h6>
     </div>
     <div class="fe-box">
-      <img src="images/update/features/books.png" alt="" />
+      <img src="images/update/features/books.png" alt="">
       <h6>Gran variedad de libros</h6>
     </div>
     <div class="fe-box">
-      <img src="images/update/features/assistance.png" alt="" />
+      <img src="images/update/features/assistance.png" alt="">
       <h6>Asistencia</h6>
     </div>
     <div class="fe-box">
-      <img src="images/update/features/secure-payment.png" alt="" />
+      <img src="images/update/features/secure-payment.png" alt="">
       <h6>Pago seguro</h6>
     </div>
   </section>
